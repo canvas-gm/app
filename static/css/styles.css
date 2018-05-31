@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "verdana";
+}
+
+body {
+    display: flex;
+    background: green;
+}
+
+aside {
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100%;
+    padding: 10px 0 10px 10px;
+    box-sizing: border-box;
+}
+    aside > .tabs{
+        display: flex;
+        height: 40px;
+        background: blue;
+    }
+        aside > .tabs > .tab{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            height: 100%;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+            aside > .tabs > .tab:hover{
+                background: purple;
+            }
+
+        aside > .tabs > .active{
+            background: orange;
+        }
+
+    aside > projects,
+    aside > servers {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 2px;
+        border-radius: 3px;
+        background: #EEE;
+    }
+    aside > projects{
+        display: none;
+    }
+
+        aside > projects > .project,
+        aside > servers > .server{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #BBB;
+            background: white;
+            border-radius: 0 0 3px 3px;
+            cursor: pointer;
+        }
+            aside > projects > .project:not(:last-child),
+            aside > servers > .server:not(:last-child){
+                margin-bottom: 2px;
+            }
+            aside > projects > .project:hover,
+            aside > servers > .server:hover{
+                box-shadow: 0 0 3px rgba(0,0,0,1) inset;
+            }
+            aside > projects > .project > img,
+            aside > servers > .server > img{
+                display: flex;
+                width: 30px;
+                height: 30px;
+                border: 1px solid black;
+            }
+                aside > projects > .project > .title,
+                aside > servers > .server > .title{
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    min-width: 0;
+                    height: 100%;
+                    box-sizing: border-box;
+                    background: white;
+                    margin: 0 5px;
+                    text-overflow: ellipsis;
+                }
+                    aside > projects > .project > .title > p,
+                    aside > servers > .server > .title > p{
+                        font-size: 10pt;
+                        font-weight: bold;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+            aside > projects > .project > .state,
+            aside > servers > .server > .state{
+                display: flex;
+                width: 5px;
+                height: 90%;
+                border-radius: 2px;
+            }
+            aside > projects > .project > .connection,
+            aside > servers > .server > .connection{
+                background: orange;
+                border: 1px solid orangered;
+            }
+            aside > projects > .project > .connected,
+            aside > servers > .server > .connected{
+                background: greenyellow;
+                border: 1px solid green;
+            }
+            aside > projects > .project > .disconnected,
+            aside > servers > .server > .disconnected{
+                background: tomato;
+                border: 1px solid red ;
+            }
+
+#asideController{
+    display: flex;
+    align-items: center; 
+    width: 10px;
+    cursor: pointer;
+}
+main {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    background: red;
+}
