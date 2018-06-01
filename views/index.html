@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Union</title>
-    <link rel="stylesheet" href="./static/css/styles.css">
-    <link rel="stylesheet" href="./static/css/fontello-embedded.css">
-    <script src="./static/js/libs/riot.js"></script>
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/fontello-embedded.css">
+    <script src="../public/js/libs/riot.js"></script>
 </head>
 
 <body>
@@ -21,13 +21,13 @@
     <main>
 
     </main>
-    <script src="./static/tags/asideController/projects.tag" type="riot/tag"></script>
-    <script src="./static/tags/asideController/servers.tag" type="riot/tag"></script>
-    <script src="./static/js/tabs.js"></script>
-    <script src="./static/js/asideController.js"></script>
+    <script src="../public/tags/asideController/projects.tag" type="riot/tag"></script>
+    <script src="../public/tags/asideController/servers.tag" type="riot/tag"></script>
+    <script src="../public/js/tabs.js"></script>
+    <script src="../public/js/asideController.js"></script>
     <script>
-        const projects = require('./projects.json')
-        const servers = require('./servers.json')
+        const projects = require('../config/projects.json')
+        const servers = require('../config/servers.json')
         riot.mount("projects", projects);
         riot.mount("servers", servers);
     </script>

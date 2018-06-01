@@ -1,12 +1,12 @@
-<servers>
-    <section each={ opts.servers } class="server">
-        <img src="./static/img/logo.png">
+<projects>
+    <section each={ opts.projects } class="project">
+        <img src="../public/img/logo.png">
         <section class="title">
-            <p>{ name }</p>
+            <p>{ title }</p>
         </section>
         <section class="state { state ? state : ""}">
         </section>
     </section>
     <script>
     </script>
-</servers>
+</projects>
