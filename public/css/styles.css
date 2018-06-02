@@ -5,49 +5,85 @@
 
 html, body {
     height: 100%;
-    font-family: "verdana";
+    font-family: "Roboto";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+	border: solid 0 transparent;
+	border-right-width: 4px;
+	border-radius: 5px;
+	border-top-right-radius: 9px 5px;
+	border-bottom-right-radius: 9px 5px;
+	box-shadow: inset 0 0 0 1px #9E9E9E;
 }
 
 body {
     display: flex;
+    flex-direction: column;
+    background: blue;
+}
+
+body > header {
+    height: 80px;
+    display: flex;
+    flex-shrink: 0;
     background: green;
 }
 
-aside {
-    display:flex;
+body > main {
+    display: flex;
+    background: rgb(145, 114, 80);
+    flex-grow: 1;
+    padding: 10px 10px 10px 0;
+}
+
+main > nav {
+    display: flex;
     flex-direction: column;
     width: 300px;
-    height: 100%;
-    padding: 10px 0 10px 10px;
     box-sizing: border-box;
+    border-radius: 4px;
+    padding: 2px;
+    overflow: hidden;
+    background: #FFF;
+    border: 2px solid rgb(101, 96, 83);
+    box-shadow: 2px solid #FFF inset;
+    margin-left: 10px;
 }
-    aside > .tabs{
+    nav > .tabs {
         display: flex;
         flex-shrink: 0;
+        background: rgb(239, 233, 221);
         height: 40px;
     }
-        aside > .tabs > .tab{
+        nav > .tabs > .tab {
             display: flex;
             align-items: center;
             justify-content: center;
             flex: 1 0;
-            height: 100%;
-            background: #CCC;
-            color: black;
+            color: #333;
             font-weight: bold;
             cursor: pointer;
         }
-            aside > .tabs > .tab:hover:not(.active){
-                background: white;
+            nav > .tabs > .tab:hover:not(.active){
+                background:#FFF;
             }
 
-        aside > .tabs > .active{
-            background: #EEE;
-            color: black;
+        nav > .tabs > .tab:not(.active) {
+            background: none;
+            opacity: 0.45;
+        }
+        nav > .tabs > .tab.active {
+            background: rgb(239, 233, 221);
+            cursor: default;
         }
 
-    aside > projects,
-    aside > servers {
+    nav > projects,
+    nav > servers {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -55,44 +91,42 @@ aside {
         box-sizing: border-box;
         padding: 2px;
         border-radius: 0 0 3px 3px;
-        background: #EEE;
+        background: rgb(239, 233, 221);
         overflow-y: auto;
     }
-    aside > projects{
+    nav > projects {
         display: none;
     }
 
-        aside > projects > .project,
-        aside > servers > .server{
+        nav > projects > .project,
+        nav > servers > .server {
             display: flex;
             align-items: center;
             flex-shrink: 0;
             width: 100%;
             height: 40px;
-            padding: 5px;
+            padding: 4px;
             box-sizing: border-box;
-            border: 1px solid #BBB;
             background: white;
             border-radius: 0 0 3px 3px;
             cursor: pointer;
         }
-            aside > projects > .project:not(:last-child),
-            aside > servers > .server:not(:last-child){
+            nav > projects > .project:not(:last-child),
+            nav > servers > .server:not(:last-child){
                 margin-bottom: 2px;
             }
-            aside > projects > .project:hover,
-            aside > servers > .server:hover{
-                box-shadow: 0 0 3px rgba(0,0,0,1) inset;
+            nav > projects > .project:hover,
+            nav > servers > .server:hover{
+                box-shadow: 0 0 5px #8D6E63 inset;
             }
-            aside > projects > .project > img,
-            aside > servers > .server > img{
+            nav > projects > .project > img,
+            nav > servers > .server > img{
                 display: flex;
                 width: 30px;
                 height: 30px;
-                border: 1px solid black;
             }
-                aside > projects > .project > .title,
-                aside > servers > .server > .title{
+                nav > projects > .project > .title,
+                nav > servers > .server > .title{
                     display: flex;
                     align-items: center;
                     flex: 1;
@@ -100,49 +134,51 @@ aside {
                     height: 100%;
                     box-sizing: border-box;
                     background: white;
-                    margin: 0 5px;
+                    margin: 0 10px;
                     text-overflow: ellipsis;
                 }
-                    aside > projects > .project > .title > p,
-                    aside > servers > .server > .title > p{
-                        font-size: 10pt;
-                        font-weight: bold;
+                    nav > projects > .project > .title > p,
+                    nav > servers > .server > .title > p{
+                        font-size: 11pt;
+                        color: #37474F;
+                        font-weight: 500;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-            aside > projects > .project > .state,
-            aside > servers > .server > .state{
+            nav > projects > .project > .state,
+            nav > servers > .server > .state{
                 display: flex;
-                width: 5px;
-                height: 90%;
+                width: 4px;
+                height: 92%;
                 border-radius: 2px;
             }
-            aside > projects > .project > .connection,
-            aside > servers > .server > .connection{
-                background: orange;
-                border: 1px solid orangered;
+            nav > projects > .project > .connection,
+            nav > servers > .server > .connection{
+                background: #FFA000;
+                border: 1px solid #E65100;
             }
-            aside > projects > .project > .connected,
-            aside > servers > .server > .connected{
-                background: greenyellow;
-                border: 1px solid green;
+            nav > projects > .project > .connected,
+            nav > servers > .server > .connected{
+                background: #00E676;
+                border: 1px solid #00C853;
             }
-            aside > projects > .project > .disconnected,
-            aside > servers > .server > .disconnected{
-                background: tomato;
-                border: 1px solid red ;
+            nav > projects > .project > .disconnected,
+            nav > servers > .server > .disconnected{
+                background: #F44336;
+                border: 1px solid #B71C1C ;
             }
 
-#asideController{
+main > #panelController {
     display: flex;
-    align-items: center; 
-    width: 10px;
+    align-items: center;
+    width: 12px;
     cursor: pointer;
+    color: #3E2723;
 }
-main {
+
+main > aside {
     display: flex;
     flex-grow: 1;
-    height: 100%;
     background: red;
 }

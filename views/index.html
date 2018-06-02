@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Union</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/styles.css">
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
     <script src="../public/js/libs/riot.js"></script>
 </head>
-
 <body>
-    <aside id="leftPanel">
-        <section class="tabs">
-            <section id="servers" class="tab active"><p>Servers</p></section>
-            <section id="projects" class="tab"><p>Projects</p></section>
-        </section>
-        <projects></projects>
-        <servers></servers>
-    </aside>
-    <section id="asideController"></section>
+    <header></header>
     <main>
+        <nav id="leftPanel">
+            <section class="tabs">
+                <section id="servers" class="tab active">
+                    <p>Servers</p>
+                </section>
+                <section id="projects" class="tab">
+                    <p>Projects</p>
+                </section>
+            </section>
+            <projects></projects>
+            <servers></servers>
+        </nav>
+        <section id="panelController"></section>
+        <aside>
 
+        </aside>
     </main>
     <script src="../public/tags/asideController/projects.tag" type="riot/tag"></script>
     <script src="../public/tags/asideController/servers.tag" type="riot/tag"></script>
     <script src="../public/js/tabs.js"></script>
-    <script src="../public/js/asideController.js"></script>
+    <script src="../public/js/panelController.js"></script>
     <script>
         const projects = require('../config/projects.json')
         const servers = require('../config/servers.json')
