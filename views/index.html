@@ -9,31 +9,37 @@
     <script src="../public/js/libs/riot.js"></script>
 </head>
 <body>
-    <nav id="leftPanel">
-        <section class="tabs">
-            <section id="servers" class="tab active">
-                <p>Servers</p>
+    <aside id="leftPanel">
+            <section class="headButtons">
+                <section class="button icon-home" id="hub" title="Hub"></section>
+                <section class="button icon-group" id="search" title="Search"></section>
+                <section class="button icon-github-circled" id="git" title="GIT"></section>
+                <section class="button icon-chat" id="discord" title="Discord"></section>
             </section>
-            <section id="projects" class="tab">
-                <p>Projects</p>
+        <nav>
+            
+            <section class="tabs">
+                <section id="servers" class="tab active">
+                    <p>Servers</p>
+                </section>
+                <section id="projects" class="tab">
+                    <p>Projects</p>
+                </section>
             </section>
-        </section>
-        <projects></projects>
-        <servers></servers>
-    </nav>
+            <listLeftPanel class="projectsPanel" option="project"></listLeftPanel>
+            <listLeftPanel class="serversPanel" option="server"></listLeftPanel>
+        </nav> 
+    </aside>
+    
     <section id="panelController"></section>
     <main>
 
     </main>
-    <script src="../public/tags/asideController/projects.tag" type="riot/tag"></script>
-    <script src="../public/tags/asideController/servers.tag" type="riot/tag"></script>
-    <script src="../public/js/tabs.js"></script>
+    <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
+    <script src="../public/js/leftPanelTabs.js"></script>
     <script src="../public/js/panelController.js"></script>
     <script>
-        const projects = require('../config/projects.json')
-        const servers = require('../config/servers.json')
-        riot.mount("projects", projects);
-        riot.mount("servers", servers);
+        riot.mount("listLeftPanel");
     </script>
 </body>
 </html>

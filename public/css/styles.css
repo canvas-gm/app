@@ -28,10 +28,53 @@ body {
     background: rgb(145, 114, 80);
     padding: 10px 10px 10px 0;
 }
-
-nav {
+#leftPanel{
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
+}
+    #leftPanel > .headButtons {
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+        padding: 5px 5px 7px 5px;
+        box-sizing: border-box;
+    }
+        #leftPanel > .headButtons > .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            height: 100%;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid #DDD;
+            text-shadow: 0 0 5px #000;
+        }
+            #leftPanel > .headButtons > .button:not(:last-child) {
+                margin-right: 5px;
+            }
+        #hub {
+            background: lightblue;
+        }
+
+        #search {
+            background: lightgreen;
+        }
+
+        #git {
+            background: orange;
+        }
+        #discord {
+            background: mediumslateblue;
+        }
+
+#leftPanel > nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     width: 320px;
     box-sizing: border-box;
     border-radius: 4px;
@@ -39,16 +82,16 @@ nav {
     overflow: hidden;
     background: #FFF;
     border: 2px solid rgb(101, 96, 83);
-    box-shadow: 2px solid #FFF inset;
-    margin-left: 10px;
+    box-shadow: 0 0 2px #FFF inset;
 }
-    nav > .tabs {
+
+    #leftPanel > nav > .tabs {
         display: flex;
         flex-shrink: 0;
         background: rgb(239, 233, 221);
         height: 40px;
     }
-        nav > .tabs > .tab {
+        #leftPanel > nav > .tabs > .tab {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -57,21 +100,19 @@ nav {
             font-weight: bold;
             cursor: pointer;
         }
-            nav > .tabs > .tab:hover:not(.active){
+            #leftPanel > nav > .tabs > .tab:hover:not(.active){
                 background:#FFF;
             }
-
-        nav > .tabs > .tab:not(.active) {
+        #leftPanel > nav > .tabs > .tab:not(.active) {
             background: none;
             opacity: 0.45;
         }
-        nav > .tabs > .tab.active {
+        #leftPanel > nav > .tabs > .tab.active {
             background: rgb(239, 233, 221);
             cursor: default;
         }
 
-    nav > projects,
-    nav > servers {
+    #leftPanel > nav > listLeftPanel {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -82,12 +123,11 @@ nav {
         background: rgb(239, 233, 221);
         overflow-y: auto;
     }
-    nav > projects {
-        display: none;
-    }
+        #leftPanel > nav > .projectsPanel {
+            display: none;
+        }
 
-        nav > projects > .project,
-        nav > servers > .server {
+        #leftPanel > nav > listLeftPanel > .row {
             display: flex;
             align-items: center;
             flex-shrink: 0;
@@ -99,23 +139,19 @@ nav {
             border-radius: 0 0 3px 3px;
             cursor: pointer;
         }
-            nav > projects > .project:not(:last-child),
-            nav > servers > .server:not(:last-child){
+            #leftPanel > nav > listLeftPanel > .row:not(:last-child) {
                 margin-bottom: 2px;
             }
-            nav > projects > .project:hover,
-            nav > servers > .server:hover{
+            #leftPanel > nav > listLeftPanel > .row:hover {
                 box-shadow: 0 0 5px #8D6E63 inset;
             }
-            nav > projects > .project > img,
-            nav > servers > .server > img{
+            #leftPanel > nav > listLeftPanel > .row > img {
                 display: flex;
                 width: 30px;
                 height: 30px;
                 opacity: 0.6;
             }
-                nav > projects > .project > .title,
-                nav > servers > .server > .title{
+                #leftPanel > nav > listLeftPanel > .row > .title {
                     display: flex;
                     align-items: center;
                     flex: 1;
@@ -126,8 +162,7 @@ nav {
                     margin: 0 10px;
                     text-overflow: ellipsis;
                 }
-                    nav > projects > .project > .title > p,
-                    nav > servers > .server > .title > p{
+                    #leftPanel > nav > listLeftPanel > .row > .title > p {
                         font-size: 11pt;
                         color: #37474F;
                         font-weight: 500;
@@ -135,31 +170,28 @@ nav {
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-            nav > projects > .project > .state,
-            nav > servers > .server > .state{
+            #leftPanel > nav > listLeftPanel > .row > .state {
                 display: flex;
                 width: 4px;
                 height: 92%;
                 border-radius: 2px;
             }
-            nav > projects > .project > .connection,
-            nav > servers > .server > .connection{
+            #leftPanel > nav > listLeftPanel > .row > .connection {
                 background: #FFA000;
                 border: 1px solid #E65100;
             }
-            nav > projects > .project > .connected,
-            nav > servers > .server > .connected{
+            #leftPanel > nav > listLeftPanel > .row > .connected {
                 background: #00E676;
                 border: 1px solid #00C853;
             }
-            nav > projects > .project > .disconnected,
-            nav > servers > .server > .disconnected{
+            #leftPanel > nav > listLeftPanel > .row > .disconnected {
                 background: #F44336;
                 border: 1px solid #B71C1C ;
             }
 
 #panelController {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 12px;
     cursor: pointer;

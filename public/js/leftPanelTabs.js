@@ -3,10 +3,11 @@
     let projects = document.getElementById("projects");
     const tabs = [servers, projects];
 
-    let projectsPanel = document.querySelector("projects");
-    let serversPanel = document.querySelector("servers");
+    let projectsPanel = document.querySelector("nav > .projectsPanel");
+    let serversPanel = document.querySelector("nav > .serversPanel");
 
     servers.addEventListener("click", (event) => {
+        
         projectsPanel.style.display = "none";
         serversPanel.style.display = "flex";
         setActive(servers);

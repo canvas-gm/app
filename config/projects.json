@@ -1,22 +1,22 @@
 {
-    "projects": [
+    "data": [
         {
-            "title": "Mon premier projet",
+            "name": "Mon premier projet",
             "description": "La première description :D !",
             "state": "connection"
         },
         {
-            "title": "Mon deuxième projet",
+            "name": "Mon deuxième projet",
             "description": "La deuxième description !",
             "state": "connected"
         },
         {
-            "title": "Mon deuxième projet",
+            "name": "Mon deuxième projet",
             "description": "La deuxième description !",
             "state": "disconnected"
         },
         {
-            "title": "Mon deuxième projet",
+            "name": "Mon deuxième projet",
             "description": "La deuxième description !",
             "state": null
         }

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     panel.addEventListener("mouseleave", () => {
-        panel.classList.add(isClose ? "icon-right-dir" : "icon-left-dir");
+        panel.classList.remove(isClose ? "icon-right-dir" : "icon-left-dir");
     });
 
     panel.addEventListener("click", () => {
