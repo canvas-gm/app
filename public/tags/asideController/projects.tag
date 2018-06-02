@@ -1,6 +1,6 @@
 <projects>
     <section each={ opts.projects } class="project">
-        <img src="../public/img/logo.png">
+        <img src="../public/img/gamepad.svg">
         <section class="title">
             <p>{ title }</p>
         </section>
