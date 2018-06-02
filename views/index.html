@@ -9,24 +9,21 @@
     <script src="../public/js/libs/riot.js"></script>
 </head>
 <body>
-    <header></header>
-    <main>
-        <nav id="leftPanel">
-            <section class="tabs">
-                <section id="servers" class="tab active">
-                    <p>Servers</p>
-                </section>
-                <section id="projects" class="tab">
-                    <p>Projects</p>
-                </section>
+    <nav id="leftPanel">
+        <section class="tabs">
+            <section id="servers" class="tab active">
+                <p>Servers</p>
             </section>
-            <projects></projects>
-            <servers></servers>
-        </nav>
-        <section id="panelController"></section>
-        <aside>
+            <section id="projects" class="tab">
+                <p>Projects</p>
+            </section>
+        </section>
+        <projects></projects>
+        <servers></servers>
+    </nav>
+    <section id="panelController"></section>
+    <main>
 
-        </aside>
     </main>
     <script src="../public/tags/asideController/projects.tag" type="riot/tag"></script>
     <script src="../public/tags/asideController/servers.tag" type="riot/tag"></script>

@@ -4,8 +4,10 @@
 }
 
 html, body {
-    height: 100%;
     font-family: "Roboto";
+    overflow: hidden;
+    height: calc(100vh - 20px);
+    box-sizing: content-box;
 }
 
 ::-webkit-scrollbar {
@@ -23,28 +25,14 @@ html, body {
 
 body {
     display: flex;
-    flex-direction: column;
-    background: blue;
-}
-
-body > header {
-    height: 80px;
-    display: flex;
-    flex-shrink: 0;
-    background: green;
-}
-
-body > main {
-    display: flex;
     background: rgb(145, 114, 80);
-    flex-grow: 1;
     padding: 10px 10px 10px 0;
 }
 
-main > nav {
+nav {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 320px;
     box-sizing: border-box;
     border-radius: 4px;
     padding: 2px;
@@ -169,15 +157,16 @@ main > nav {
                 border: 1px solid #B71C1C ;
             }
 
-main > #panelController {
+#panelController {
     display: flex;
     align-items: center;
     width: 12px;
     cursor: pointer;
     color: #3E2723;
+    flex-shrink: 0;
 }
 
-main > aside {
+main {
     display: flex;
     flex-grow: 1;
     background: red;
