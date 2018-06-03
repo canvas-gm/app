@@ -40,20 +40,24 @@
             </nav>
 
             <section class="member-area">
-
+                
             </section>
         </section>
 
         <section id="panelController"></section>
-        <aside>
 
-        </aside>
+        <section id="content">
+            <news></news>
+        </section>
     </main>
+    
     <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
+    <script src="../public/tags/news.tag" type="riot/tag"></script>
     <script src="../public/js/leftPanelTabs.js"></script>
     <script src="../public/js/panelController.js"></script>
     <script>
         riot.mount("listLeftPanel");
+        riot.mount("news", require('../config/news.json'));
     </script>
 </body>
 </html>

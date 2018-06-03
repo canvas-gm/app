@@ -66,6 +66,8 @@ main {
     padding: 10px 10px 10px 0;
     flex-grow: 1;
     border: 2px solid #B0BEC5;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
 #leftPanel{
@@ -103,7 +105,6 @@ main {
             #leftPanel > .headButtons > .button + .button {
                 margin-left: 10px;
             }
-
         #hub {
             background: #82B1FF;
         }
@@ -267,7 +268,11 @@ main {
     flex-shrink: 0;
 }
 
-main {
+#content {
     display: flex;
-    flex-grow: 1;
+    background: var(--soft-background);
+    border: 2px solid #78909C;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 2px #FFF inset;
 }
