@@ -9,10 +9,12 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
-        frame: true
+        frame: false
     });
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
+
     mainWindow.loadFile("./views/index.html");
+    
     mainWindow.on("closed", function closed() {
         mainWindow = void 0;
     });

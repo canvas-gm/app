@@ -45,21 +45,41 @@ body {
 }
 
 header {
-    height: 30px;
+    height: 25px;
     background: var(--border-color);
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     flex-shrink: 0;
-    padding: 0 10px;
+    padding-left: 10px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
-    header p {
+    header > p {
         color: #FFF;
         font-weight: bold;
+        font-size: 14pt;
+        flex: 1;
+        -webkit-app-region: drag;
     }
-    header ul {
-        background: red;
+    header > ul {
         display: flex;
-        align-self: flex-end;
+        font-size: 16pt;
     }
+
+    header > ul > li {
+        display: flex;
+        color: white;
+        cursor: pointer;
+    }
+        header > ul > li:hover {
+            color: #DDD;
+        }
+            header > ul > li:hover:last-child {
+                color: red;
+            }
+        header > ul > li:not(:last-child) {
+            margin-right: 5px;
+        }
 
 main {
     display: flex;

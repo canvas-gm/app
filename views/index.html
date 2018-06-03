@@ -12,7 +12,9 @@
     <header>
         <p>CanvasGM</p>
         <ul>
-            <li>x</li>
+            <li class="icon-window-minimize" id="minimize"></li>
+            <li class="icon-window-maximize" id="fullscreen"></li>
+            <li class="icon-window-close" id="close"></li>
         </ul>
     </header>
     <main>
@@ -55,6 +57,7 @@
     <script src="../public/tags/news.tag" type="riot/tag"></script>
     <script src="../public/js/leftPanelTabs.js"></script>
     <script src="../public/js/panelController.js"></script>
+    <script src="../public/js/windowController.js"></script>
     <script>
         riot.mount("listLeftPanel");
         riot.mount("news", require('../config/news.json'));
