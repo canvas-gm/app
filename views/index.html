@@ -9,31 +9,45 @@
     <script src="../public/js/libs/riot.js"></script>
 </head>
 <body>
-    <aside id="leftPanel">
+    <header>
+        <p>CanvasGM</p>
+        <ul>
+            <li>x</li>
+        </ul>
+    </header>
+    <main>
+        <section id="leftPanel">
             <section class="headButtons">
                 <section class="button icon-home" id="hub" title="Hub"></section>
                 <section class="button icon-group" id="search" title="Search"></section>
                 <section class="button icon-github-circled" id="git" title="GIT"></section>
                 <section class="button icon-chat" id="discord" title="Discord"></section>
             </section>
-        <nav>
-            
-            <section class="tabs">
-                <section id="servers" class="tab active">
-                    <p>Servers</p>
-                </section>
-                <section id="projects" class="tab">
-                    <p>Projects</p>
-                </section>
-            </section>
-            <listLeftPanel class="projectsPanel" option="project"></listLeftPanel>
-            <listLeftPanel class="serversPanel" option="server"></listLeftPanel>
-        </nav> 
-    </aside>
-    
-    <section id="panelController"></section>
-    <main>
 
+            <nav>
+                <section class="tabs">
+                    <section id="servers" class="tab active">
+                        <span>10</span>
+                        <p>Servers</p>
+                    </section>
+                    <section id="projects" class="tab">
+                        <span>10</span>
+                        <p>Projects</p>
+                    </section>
+                </section>
+                <listLeftPanel class="projectsPanel" option="project"></listLeftPanel>
+                <listLeftPanel class="serversPanel" option="server"></listLeftPanel>
+            </nav>
+
+            <section class="member-area">
+
+            </section>
+        </section>
+
+        <section id="panelController"></section>
+        <aside>
+
+        </aside>
     </main>
     <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
     <script src="../public/js/leftPanelTabs.js"></script>
