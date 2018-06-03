@@ -9,6 +9,8 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1200,
         height: 800,
+        minHeight: 600,
+        minWidth: 1000,
         frame: false
     });
     mainWindow.webContents.openDevTools();
