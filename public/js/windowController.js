@@ -12,14 +12,13 @@
 
     fullscreenElem.addEventListener("click", function(){
         const win = remote.getCurrentWindow();
-        
-        if(fullscreenElem.classList.contains("icon-window-maximize")) {
-            win.maximize();
+        if(win.isMaximized()) {
+            win.restore();
             fullscreenElem.classList.remove("icon-window-maximize");
             fullscreenElem.classList.add("icon-window-restore")
         }
         else {
-            win.restore();
+            win.maximize();
             fullscreenElem.classList.remove("icon-window-restore");
             fullscreenElem.classList.add("icon-window-maximize")
         }
@@ -31,16 +30,15 @@
     });
 
     window.addEventListener("resize", function(){
-        const height = window.outerHeight;
-        const width = window.innerWidth;
-        console.log([width, height]);
-        if([width, height] === [screen.width, screen.height]) {
-            console.log("same");
+        const win = remote.getCurrentWindow();
+        if(win.isMaximized()) {
+            fullscreenElem.classList.remove("icon-window-maximize");
+            fullscreenElem.classList.add("icon-window-restore")
         }
-        // if(fullscreenElem.classList.contains("icon-window-restore")) {
-        //     fullscreenElem.classList.remove("icon-window-restore");
-        //     fullscreenElem.classList.add("icon-window-maximize")
-        // }
+        else {
+            fullscreenElem.classList.remove("icon-window-restore");
+            fullscreenElem.classList.add("icon-window-maximize")
+        }
     });
 
 })();
