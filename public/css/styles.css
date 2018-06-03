@@ -94,6 +94,7 @@ main {
     border: 2px solid #B0BEC5;
     box-sizing: border-box;
     border-radius: 5px;
+    position: relative;
 }
 
 #leftPanel{

@@ -18,6 +18,7 @@
         </ul>
     </header>
     <main>
+        <popup></popup>
         <section id="leftPanel">
             <section class="headButtons">
                 <section class="button icon-home" id="hub" title="Hub"></section>
@@ -59,12 +60,19 @@
     
     <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
     <script src="../public/tags/news.tag" type="riot/tag"></script>
+    <script src="../public/tags/popup.tag" type="riot/tag"></script>
     <script src="../public/js/leftPanelTabs.js"></script>
     <script src="../public/js/panelController.js"></script>
     <script src="../public/js/windowController.js"></script>
     <script>
         riot.mount("listLeftPanel");
         riot.mount("news", require('../config/news.json'));
+
+        const AuthenticationLogout = document.getElementById("AuthenticationLogout");
+        AuthenticationLogout.addEventListener("click", function(){
+            riot.mount("popup");
+            document.querySelector("popup").style.display = "flex";
+        });
     </script>
 </body>
 </html>
