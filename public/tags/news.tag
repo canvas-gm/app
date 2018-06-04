@@ -6,11 +6,16 @@
             flex-direction: column;
             flex: 1;
             overflow-y: auto;
+            padding: 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
             news > .new {
                 display: flex;
                 flex-direction: column;
                 flex-shrink: 0;
+                border-radius: 4px;
+                overflow: hidden;
             }
                 news > .new:not(:last-child){
                     margin-bottom: 10px;
@@ -20,27 +25,28 @@
                     justify-content: space-between;
                     align-items: center;
                     background: white;
-                    padding: 5px 10px;
-                    background: #78909C;
+                    padding: 4px 8px;
+                    background: #455A64;
                 }
                     news > .new > .title > p{
                         font-weight: bold;
                         color: white;
-                        font-size: 14pt;
+                        font-size: 12pt;
                     }
                     news > .new > .title > span{
                         display: flex;
-                        background: white;
+                        color: #FFF;
+                        background: #37474F;
                         padding: 2px 5px;
                         border-radius: 5px;
-                        font-size: 12pt;
-                        font-style: italic;
+                        font-size: 10pt;
+                        font-weight: bold;
                     }
-                news > .new > .text{
+
+                news > .new > .text {
                     display: flex;
-                    background: white;
+                    background: #ECEFF1;
                     padding: 10px;
-                    box-shadow: 0px 0px 10px rgba(0,0,0, 0.2) inset;
                     text-align: justify;
                 }
     </style>
@@ -63,4 +69,3 @@
         }, 5000);
     </script>
 </news>
-    
