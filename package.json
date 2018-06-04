@@ -16,7 +16,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron": "^2.0.2"
   },
   "dependencies": {
     "@sindresorhus/is": "^0.9.0"

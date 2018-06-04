@@ -17,14 +17,15 @@
             <span class="icon-window-close"></span>
         </section>
         <section class="content">
-
+            <yield/>
         </section>
     </section>
     <script>
     ( () => {
         this.on("mount", function() {
             document.querySelector("popup").style.display = "flex";
-            const popupCloseElem = document.querySelector("popup .popup > .title > .icon-window-close");
+            const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
+            
             popupCloseElem.addEventListener("click", () => {
                 this.unmount(true);
                 const popup = document.querySelector("popup").style.display = "none";
