@@ -64,8 +64,7 @@
         let interval = setInterval(() => {
             this.opts = require('../config/news2.json');
             this.update();
-            console.log("news updated");
             clearInterval(interval);
-        }, 5000);
+        }, 2000);
     </script>
 </news>

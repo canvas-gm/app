@@ -213,83 +213,10 @@ main {
             background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(236,239,241,1) 100%);
             cursor: default;
         }
-
-    #leftPanel > nav > listLeftPanel {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        min-width: 0;
-        box-sizing: border-box;
-        padding: 2px;
-        border-radius: 0 0 3px 3px;
-        background: var(--soft-background);
-        overflow-y: auto;
-    }
+    
         #leftPanel > nav > .projectsPanel {
             display: none;
         }
-
-        #leftPanel > nav > listLeftPanel > .row {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-            width: 100%;
-            height: 40px;
-            padding: 4px;
-            box-sizing: border-box;
-            background: white;
-            border-radius: 0 0 3px 3px;
-            cursor: pointer;
-        }
-            #leftPanel > nav > listLeftPanel > .row:not(:last-child) {
-                margin-bottom: 2px;
-            }
-            #leftPanel > nav > listLeftPanel > .row:hover {
-                box-shadow: 0 0 5px #8D6E63 inset;
-            }
-
-            #leftPanel > nav > listLeftPanel > .row > .title {
-                display: flex;
-                align-items: center;
-                flex: 1;
-                min-width: 0;
-                height: 100%;
-                box-sizing: border-box;
-                margin: 0 10px;
-                text-overflow: ellipsis;
-            }
-                #leftPanel > nav > listLeftPanel > .row > .title > p {
-                    font-size: 11pt;
-                    color: #37474F;
-                    font-weight: 500;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-
-            #leftPanel > nav > listLeftPanel > .row > .state {
-                display: flex;
-                width: 10px;
-                height: 10px;
-                border-radius: 10px;
-                margin-left: 5px;
-            }
-            #leftPanel > nav > listLeftPanel > .row > .state.connection {
-                background: #FFA000;
-                border: 1px solid #E65100;
-            }
-            #leftPanel > nav > listLeftPanel > .row > .state.connected {
-                background: #00E676;
-                border: 1px solid #00C853;
-            }
-            #leftPanel > nav > listLeftPanel > .row > .state.disconnected {
-                background: #F44336;
-                border: 1px solid #B71C1C ;
-            }
-            #leftPanel > nav > listLeftPanel > .row > .state.null {
-                background: #CFD8DC;
-                border: 1px solid #78909C ;
-            }
 
 #panelController {
     display: flex;

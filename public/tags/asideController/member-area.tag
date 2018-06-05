@@ -1,4 +1,21 @@
 <member-area>
+    <img src={opts.user.avatar ? opts.user.avatar : "../public/img/gamepad.svg" }>
+    <section class="information">
+        <p id="pseudo">{ opts.user.pseudo }</p>
+        <button id="authenticationLogout">LogIn</button>
+    </section>
+
+
+    <script>
+        this.on("mount", function(){
+            const authenticationLogout = document.getElementById("authenticationLogout");
+            authenticationLogout.addEventListener("click", function(){
+                openPopup("authentication");
+            });
+        });
+    </script>
+
+
     <style>
         member-area {
             display: flex;
@@ -10,7 +27,6 @@
             border: 2px solid #78909C;
             box-shadow: 0 0 2px #FFF inset;
         }
-
             member-area > img {
                 height: 80px;
                 width: 80px;
@@ -35,20 +51,7 @@
                     color: white;
                     border: 2px solid red;
                     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    cursor: pointer;
                 }
     </style>
-
-    <img src="../public/img/gamepad.svg">
-    <section class="information">
-        <p id="pseudo">{ opts.user.pseudo }</p>
-        <button id="AuthenticationLogout">Logout</button>
-    </section>
-    <script>
-        this.on("mount", function(){
-            const AuthenticationLogout = document.getElementById("AuthenticationLogout");
-            AuthenticationLogout.addEventListener("click", function(){
-                openPopup("authentication");
-            });
-        });
-    </script>
 </member-area>

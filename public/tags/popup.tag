@@ -1,4 +1,40 @@
 <popup>
+    <section class="popup">
+        <section class="title">
+            <p>{ opts.title }</p>
+            <span hide={opts.modalType == "onlyValid"} class="icon-window-close"></span>
+        </section>
+        <section class="content">
+            <yield/>
+        </section>
+        <section class="buttons">
+            <button class="valid">Valider</button>
+            <button hide={opts.modalType == "onlyValid"} class="cancel">Annuler</button>
+        </section>
+    </section>
+
+
+    <script>
+        this.on("mount", function() {
+            // this.opts.modelType = "simple";
+            // simple, closeWindow, onlyValid 
+            document.querySelector("popup").style.display = "flex";
+
+            const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
+            popupCloseElem.addEventListener("click", () => {
+                closePopup();
+            });
+
+            const cancelButton = document.querySelector("popup > .popup > .buttons > .cancel");
+            cancelButton.addEventListener("click", () => {
+                closePopup();
+            });
+        });
+
+        this.mixin("addUpdateOpts");
+    </script>
+
+
     <style>
         popup {
             display: none;
@@ -49,38 +85,4 @@
             margin-top: 10px;
         }
     </style>
-
-    <section class="popup">
-        <section class="title">
-            <p>{ opts.title }</p>
-            <span hide={opts.modalType == "onlyValid"} class="icon-window-close"></span>
-        </section>
-        <section class="content">
-            <yield/>
-        </section>
-        <section class="buttons">
-            <button class="valid">Valider</button>
-            <button hide={opts.modalType == "onlyValid"} class="cancel">Annuler</button>
-        </section>
-    </section>
-
-    <script>
-        this.on("mount", function() {
-            // this.opts.modelType = "simple";
-            // simple, closeWindow, onlyValid 
-            document.querySelector("popup").style.display = "flex";
-
-            const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
-            popupCloseElem.addEventListener("click", () => {
-                closePopup();
-            });
-
-            const cancelButton = document.querySelector("popup > .popup > .buttons > .cancel");
-            cancelButton.addEventListener("click", () => {
-                closePopup();
-            });
-        });
-
-        this.mixin("addUpdateOpts");
-    </script>
 </popup>

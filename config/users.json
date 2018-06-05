@@ -3,7 +3,8 @@
         {
             "pseudo": "Fraxken",
             "mail": "fraxken@gmail.com",
-            "password": "1234"
+            "password": "1234",
+            "avatar": "../public/img/logo.png"
         },
         {
             "pseudo": "Skander",

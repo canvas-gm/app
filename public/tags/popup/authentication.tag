@@ -1,34 +1,4 @@
 <authentication>
-    <style>
-        authentication {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            padding: 10px;
-        }
-            authentication > form {
-                display: flex;
-                flex-direction: column;
-            }
-                authentication > form > input {
-                    padding: 2px 5px;
-                    border-radius: 5px;
-                    border: none;
-                }
-                    authentication > form > input:not(:last-child){
-                        margin-bottom: 5px;
-                    }
-
-            authentication > .links{
-                margin-top: 10px;
-                display: flex;
-                justify-content: space-between;
-                font-size: 10pt;
-                font-weight: bold;
-                padding: 0 10px;
-            }
-    </style>
-
     <form>
         <input id="mail" placeholder="email" type="text">
         <input id="password" placeholder="password" type="password">
@@ -40,6 +10,7 @@
         <a href="http://www.google.fr" id="forgetPw">Mot de passe oublié ?</a>
         <a href="http://www.google.com" id="signIn">S'inscrire</a>
     </section>
+
 
     <script>
         const { shell } = require("electron");
@@ -93,4 +64,35 @@
             // console.log("updated with the parent");
         })
     </script>
+
+    
+    <style>
+        authentication {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 10px;
+        }
+            authentication > form {
+                display: flex;
+                flex-direction: column;
+            }
+                authentication > form > input {
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    border: none;
+                }
+                    authentication > form > input:not(:last-child){
+                        margin-bottom: 5px;
+                    }
+
+            authentication > .links{
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 10pt;
+                font-weight: bold;
+                padding: 0 10px;
+            }
+    </style>
 </authentication>

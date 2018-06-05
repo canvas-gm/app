@@ -38,8 +38,8 @@
                         <p>Projects</p>
                     </section>
                 </section>
-                <listLeftPanel class="projectsPanel" option="project"></listLeftPanel>
-                <listLeftPanel class="serversPanel" option="server"></listLeftPanel>
+                <list-left-panel class="projectsPanel" option="project"></list-left-panel>
+                <list-left-panel class="serversPanel" option="server"></list-left-panel>
             </nav>
 
             <member-area>
@@ -53,7 +53,7 @@
         </section>
     </main>
     
-    <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
+    <script src="../public/tags/asideController/list-left-panel.tag" type="riot/tag"></script>
     <script src="../public/tags/asideController/member-area.tag" type="riot/tag"></script>
     <script src="../public/tags/news.tag" type="riot/tag"></script>
     <script src="../public/tags/popup.tag" type="riot/tag"></script>
@@ -64,10 +64,10 @@
     <script src="../public/js/windowController.js"></script>
     <script src="../public/js/popup.js"></script>
     <script>
-        riot.mount("listLeftPanel");
+        riot.mount("list-left-panel");
         riot.mount("news", require('../config/news.json'));
         const user = {
-            pseudo: "Skander"
+            pseudo: "Non connecté"
         };
         const memberArea = riot.mount("member-area", {user});
     </script>

@@ -39,7 +39,6 @@ let addUpdateOpts = {
                 if(somethingDifferent === true) {
                     this.opts = opts;
                     this.update();
-                    console.log("updated");
                 }
                 else{
                     throw new Error(`updateOpts function is not needed in ${tag} tag : no different option`);
