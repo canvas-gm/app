@@ -1,4 +1,4 @@
-(function(){
+document.addEventListener("DOMContentLoaded", () => {
     const {remote} = require("electron");
 
     const minimizeElem = document.getElementById("minimize");
@@ -41,4 +41,4 @@
         }
     });
 
-})();
+});

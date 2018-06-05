@@ -54,13 +54,13 @@ header {
     height: 25px;
     background: var(--border-color);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-shrink: 0;
+    padding-left: 10px;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
     header > p {
-        height: inherit;
         color: #FFF;
         font-weight: bold;
         font-size: 14pt;
@@ -68,29 +68,24 @@ header {
         -webkit-app-region: drag;
     }
     header > ul {
-        height: inherit;
         display: flex;
-        align-content: center;
-        justify-content: center;
+        font-size: 16pt;
     }
 
-        header > ul > li {
-            display: flex;
-            color: white;
-            cursor: pointer;
-            font-size: 14pt;
-            justify-content: center;
-            align-items: center;
+    header > ul > li {
+        display: flex;
+        color: white;
+        cursor: pointer;
+    }
+        header > ul > li:hover {
+            color: #DDD;
         }
-            header > ul > li:hover {
-                color: #DDD;
+            header > ul > li:hover:last-child {
+                color: red;
             }
-                header > ul > li:hover:last-child {
-                    color: #FF5252;
-                }
-            header > ul > li:not(:last-child) {
-                margin-right: 5px;
-            }
+        header > ul > li:not(:last-child) {
+            margin-right: 5px;
+        }
 
 main {
     display: flex;
@@ -298,7 +293,6 @@ main {
         padding: 8px;
         box-sizing: border-box;
         background: #FFF;
-        border-radius: 4px;
         border: 2px solid #78909C;
         box-shadow: 0 0 2px #FFF inset;
     }
@@ -314,7 +308,7 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            align-items: flex-start;
+            align-items: flex-start; 
             flex: 1;
             margin-left: 10px;
         }
@@ -335,13 +329,15 @@ main {
     align-items: center;
     width: 12px;
     cursor: pointer;
-    color: #263238;
+    color: #3E2723;
     flex-shrink: 0;
 }
 
 #content {
     display: flex;
-    background: #90A4AE;
-    border-radius: 4px;
-    overflow: hidden;
+    background: var(--soft-background);
+    border: 2px solid #78909C;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 2px #FFF inset;
 }

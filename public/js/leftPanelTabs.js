@@ -1,4 +1,4 @@
-(function(){
+document.addEventListener("DOMContentLoaded", () => {
     let servers = document.getElementById('servers');
     let projects = document.getElementById("projects");
     const tabs = [servers, projects];
@@ -25,4 +25,4 @@
             element.classList.add("active")
         }
     }
-})()
+});
