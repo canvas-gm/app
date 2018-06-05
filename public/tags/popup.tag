@@ -17,18 +17,14 @@
     <script>
         this.on("mount", function() {
             // this.opts.modelType = "simple";
-            // simple, closeWindow, onlyValid 
+            // simple, closeWindow, onlyValid
             document.querySelector("popup").style.display = "flex";
 
             const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
-            popupCloseElem.addEventListener("click", () => {
-                closePopup();
-            });
+            popupCloseElem.addEventListener("click", closePopup);
 
             const cancelButton = document.querySelector("popup > .popup > .buttons > .cancel");
-            cancelButton.addEventListener("click", () => {
-                closePopup();
-            });
+            cancelButton.addEventListener("click", closePopup);
         });
 
         this.mixin("addUpdateOpts");

@@ -46,6 +46,6 @@ let addUpdateOpts = {
             }
         });
     }
-}
+};
 
 riot.mixin("addUpdateOpts", addUpdateOpts);

@@ -48,7 +48,7 @@
 
         <section id="panelController"></section>
 
-        <section id="content">
+        <section id="mainContent">
             <news></news>
         </section>
     </main>
@@ -59,8 +59,9 @@
     <script src="../public/tags/popup.tag" type="riot/tag"></script>
     <script src="../public/tags/popup/authentication.tag" type="riot/tag"></script>
 
-    <script src="../public/js/leftPanelTabs.js"></script>
-    <script src="../public/js/panelController.js"></script>
+    <script src="../public/js/asideController/leftPanelTabs.js"></script>
+    <script src="../public/js/asideController/panelController.js"></script>
+    <script src="../public/js/asideController/headButtons.js"></script>
     <script src="../public/js/windowController.js"></script>
     <script src="../public/js/popup.js"></script>
     <script>
@@ -70,6 +71,14 @@
         //     pseudo: "Non connecté"
         // };
         const memberArea = riot.mount("member-area");
+
+        function unmountContent(){
+            const contentElem = document.getElementById("mainContent");
+            console.log(contentElem);
+            const childTag = contentElem.childNodes[1]._tag;
+            console.log(childTag);
+            childTag.unmount();
+        }
     </script>
 </body>
 </html>

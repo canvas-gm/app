@@ -15,7 +15,6 @@
         this.on("mount", function(){
             const authLoginLogout = document.getElementById("authLoginLogout");
             authLoginLogout.addEventListener("click", () => {
-                console.log(this.opts);
                 if(this.opts.loginButtonText === "Login") {
                     openPopup("authentication");
                 }
