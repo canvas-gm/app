@@ -1,16 +1,29 @@
 <member-area>
     <img src={opts.user.avatar ? opts.user.avatar : "../public/img/gamepad.svg" }>
     <section class="information">
-        <p id="pseudo">{ opts.user.pseudo }</p>
-        <button id="authenticationLogout">LogIn</button>
+        <p id="pseudo">{ opts.user.pseudo ? opts.user.pseudo : "Non connecté" }</p>
+        <button type="button" id="authLoginLogout">{ opts.loginButtonText }</button>
     </section>
 
 
     <script>
+        this.on("before-mount", function(){
+                this.opts.loginButtonText = "Login";
+                this.opts.user = {};
+        });
+
         this.on("mount", function(){
-            const authenticationLogout = document.getElementById("authenticationLogout");
-            authenticationLogout.addEventListener("click", function(){
-                openPopup("authentication");
+            const authLoginLogout = document.getElementById("authLoginLogout");
+            authLoginLogout.addEventListener("click", () => {
+                console.log(this.opts);
+                if(this.opts.loginButtonText === "Login") {
+                    openPopup("authentication");
+                }
+                else if(this.opts.loginButtonText === "Logout") {
+                    this.opts.user = {};
+                    this.opts.loginButtonText = "Login";
+                    this.update();
+                }
             });
         });
     </script>

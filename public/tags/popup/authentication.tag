@@ -50,6 +50,7 @@
                     const memberArea = document.querySelector("member-area")._tag;
                     // Remove password for security
                     memberArea.opts.user = userInfo;
+                    memberArea.opts.loginButtonText = "Logout";
                     memberArea.update();
                     closePopup();
                 }
