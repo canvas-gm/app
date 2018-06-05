@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "pseudo": "Fraxken",
+            "mail": "fraxken@gmail.com",
+            "password": "1234"
+        },
+        {
+            "pseudo": "Skander",
+            "mail": "skander@gmail.com",
+            "password": "1234"
+        }
+    ]
+}

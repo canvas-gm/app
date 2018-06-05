@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 li {
     list-style: none;
 }
@@ -286,42 +290,6 @@ main {
                 background: #CFD8DC;
                 border: 1px solid #78909C ;
             }
-    #leftPanel > .member-area {
-        display: flex;
-        height: 100px;
-        flex-shrink: 0;
-        padding: 8px;
-        box-sizing: border-box;
-        background: #FFF;
-        border: 2px solid #78909C;
-        box-shadow: 0 0 2px #FFF inset;
-    }
-
-        #leftPanel > .member-area > img {
-            height: 80px;
-            width: 80px;
-            border: 2px solid #78909C;
-            box-sizing: border-box;
-            border-radius: 80px;
-        }
-        #leftPanel > .member-area > .information {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: flex-start; 
-            flex: 1;
-            margin-left: 10px;
-        }
-        #leftPanel > .member-area > .information > p {
-            font-weight: bold;
-            font-size: 16pt;
-        }
-        #leftPanel > .member-area > .information > button {
-            background: orangered;
-            color: white;
-            border: 2px solid red;
-            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-        }
 
 #panelController {
     display: flex;

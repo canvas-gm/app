@@ -13,42 +13,61 @@
             z-index: 999;
         }
             popup > .popup {
+                display: flex;
+                flex-direction: column;
+                flex-shrink: 0;
                 background: var(--soft-background);
                 padding: 5px;
             }
             popup > .popup > .title {
+                position :relative;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
                 background: var(--border-color);
                 padding: 2px 5px;
                 color: white;
                 font-weight: bold;
             }
-                popup > .popup > .title > .icon-window-close:hover {
-                    color: red;
+                popup > .popup > .title > p {
+                    color: white;
                 }
+                popup > .popup > .title > .icon-window-close {
+                    position: absolute;
+                    right: 5px;
+                    cursor: pointer;
+                }
+                    popup > .popup > .title > .icon-window-close:hover {
+                        color: red;
+                    }
             popup > .popup > .content {
-                margin -top : 10px;
+                margin-top : 10px;
             }
+        popup > .popup > .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
     </style>
 
     <section class="popup">
         <section class="title">
             <p>{ opts.title }</p>
-            <span class="icon-window-close"></span>
+            <span hide={opts.modalType == "onlyValid"} class="icon-window-close"></span>
         </section>
         <section class="content">
             <yield/>
         </section>
         <section class="buttons">
             <button class="valid">Valider</button>
-            <button class="cancel">Annuler</button>
+            <button hide={opts.modalType == "onlyValid"} class="cancel">Annuler</button>
         </section>
     </section>
 
     <script>
         this.on("mount", function() {
+            // this.opts.modelType = "simple";
+            // simple, closeWindow, onlyValid 
             document.querySelector("popup").style.display = "flex";
 
             const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");

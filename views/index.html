@@ -42,13 +42,8 @@
                 <listLeftPanel class="serversPanel" option="server"></listLeftPanel>
             </nav>
 
-            <section class="member-area">
-                <img src="../public/img/gamepad.svg">
-                <section class="information">
-                    <p id="pseudo">Skander</p>
-                    <button id="AuthenticationLogout">Logout</button>
-                </section>
-            </section>
+            <member-area>
+            </member-area>
         </section>
 
         <section id="panelController"></section>
@@ -59,6 +54,7 @@
     </main>
     
     <script src="../public/tags/asideController/listLeftPanel.tag" type="riot/tag"></script>
+    <script src="../public/tags/asideController/member-area.tag" type="riot/tag"></script>
     <script src="../public/tags/news.tag" type="riot/tag"></script>
     <script src="../public/tags/popup.tag" type="riot/tag"></script>
     <script src="../public/tags/popup/authentication.tag" type="riot/tag"></script>
@@ -70,11 +66,10 @@
     <script>
         riot.mount("listLeftPanel");
         riot.mount("news", require('../config/news.json'));
-
-        const AuthenticationLogout = document.getElementById("AuthenticationLogout");
-        AuthenticationLogout.addEventListener("click", function(){
-            openPopup("authentication");
-        });
+        const user = {
+            pseudo: "Skander"
+        };
+        const memberArea = riot.mount("member-area", {user});
     </script>
 </body>
 </html>
