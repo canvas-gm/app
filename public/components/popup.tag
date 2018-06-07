@@ -1,33 +1,38 @@
 <popup>
     <section class="popup">
         <section class="title">
-            <p>{ opts.title }</p>
-            <span hide={opts.modalType == "onlyValid"} class="icon-window-close"></span>
+            <p show={ title }>{ title }</p>
+            <span
+                hide={ opts.modalType === "onlyValid" }
+                class="icon-window-close"
+                ref="close">
+            </span>
         </section>
         <section class="content">
             <yield/>
         </section>
         <section class="buttons">
             <button class="valid">Valider</button>
-            <button hide={opts.modalType == "onlyValid"} class="cancel">Annuler</button>
+            <button
+                hide={ opts.modalType === "onlyValid" }
+                class="cancel"
+                ref="cancel">
+                Annuler
+            </button>
         </section>
     </section>
-
 
     <script>
         this.on("mount", () => {
             this.root.classList.add("show");
 
-            const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
-            const cancelButton = document.querySelector("popup > .popup > .buttons > .cancel");
-
-            popupCloseElem.addEventListener("click", closePopup);
-            cancelButton.addEventListener("click", closePopup);
+            // Add cancel & close events
+            this.refs.close.addEventListener("click", closePopup);
+            this.refs.cancel.addEventListener("click", closePopup);
         });
 
         this.mixin("addUpdateOpts");
     </script>
-
 
     <style>
         popup {

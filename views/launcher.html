@@ -54,18 +54,22 @@
         </section>
     </main>
 
-    <script src="../public/tags/asideController/list-left-panel.tag" type="riot/tag"></script>
-    <script src="../public/tags/asideController/member-area.tag" type="riot/tag"></script>
-    <script src="../public/tags/news.tag" type="riot/tag"></script>
-    <script src="../public/tags/popup.tag" type="riot/tag"></script>
-    <script src="../public/tags/popup/authentication.tag" type="riot/tag"></script>
+    <!-- Load launcher components -->
+    <script src="../public/components/externalink.tag" type="riot/tag"></script>
+    <script src="../public/components/asideController/list-left-panel.tag" type="riot/tag"></script>
+    <script src="../public/components/asideController/member-area.tag" type="riot/tag"></script>
+    <script src="../public/components/news.tag" type="riot/tag"></script>
+    <script src="../public/components/popup.tag" type="riot/tag"></script>
+    <script src="../public/components/popup/authentication.tag" type="riot/tag"></script>
 
+    <!-- Load javascript script -->
     <script src="../public/js/asideController/leftPanelTabs.js"></script>
     <script src="../public/js/asideController/panelController.js"></script>
     <script src="../public/js/asideController/headButtons.js"></script>
     <script src="../public/js/windowController.js"></script>
     <script src="../public/js/popup.js"></script>
     <script>
+        riot.mount("externalink");
         riot.mount("list-left-panel");
         riot.mount("news", require('../config/news.json'));
         // const user = {

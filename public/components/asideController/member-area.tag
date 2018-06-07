@@ -8,8 +8,8 @@
 
     <script>
         this.on("before-mount", function(){
-                this.opts.loginButtonText = "Login";
-                this.opts.user = {};
+            this.opts.loginButtonText = "Login";
+            this.opts.user = {};
         });
 
         this.on("mount", function(){
@@ -50,7 +50,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                align-items: flex-start; 
+                align-items: flex-start;
                 flex: 1;
                 margin-left: 10px;
             }

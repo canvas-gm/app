@@ -26,34 +26,26 @@ function closePopup(){
     popup.classList.remove("show");
 }
 
-const addUpdateOpts = {
-    init: function() {
-        this.on('mount', function() {
-            this.updatePopupOpts = function(tag, opts) {
-                if(!is.string(tag)) {
-                    throw new typeError("tag param should be a string");
-                }
-                if(is.nullOrUndefined(opts) || JSON.stringify(opts) === "{}"){
-                    throw new Error(`updateOpts function is not needed in ${tag} tag : option is empty`);
-                }
-
-                let somethingDifferent = false;
-                for(let option in opts) {
-                    if(option !== this.opts[option]) {
-                        somethingDifferent = true;
-                        break;
-                    };
-                }
-                if(somethingDifferent === true) {
-                    this.opts = opts;
-                    this.update();
-                }
-                else{
-                    throw new Error(`updateOpts function is not needed in ${tag} tag : no different option`);
-                }
-            }
-        });
+function updatePopupOpts(tag, opts) {
+    if(!is.string(tag)) {
+        throw new typeError("tag param should be a string");
     }
-};
+    if(!is.object(opts)){
+        throw new Error(`opts param should be an Object`);
+    }
 
-riot.mixin("addUpdateOpts", addUpdateOpts);
+    // Load all parameters
+    for(const [param, value] of Object.entries(opts)) {
+        if(value === Reflect.get(this.opts, param)) {
+            continue
+        };
+        Reflect.set(this, param, value);
+    }
+    this.update();
+}
+riot.mixin("addUpdateOpts", {
+    init() {
+        this.updatePopupOpts = updatePopupOpts;
+    }
+});
+

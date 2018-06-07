@@ -3,31 +3,20 @@
         <input id="mail" placeholder="email" type="text">
         <input id="password" placeholder="password" type="password">
     </form>
-    <section class="errorMessage">
-        <p>{ opts.loginErrorMessage }</p>
+    <section class="errorMessage" show={ loginErrorMessage != null }>
+        <p>{ loginErrorMessage }</p>
     </section>
     <section class="links">
-        <a href="http://www.google.fr" id="forgetPw">Mot de passe oublié ?</a>
-        <a href="http://www.google.com" id="signIn">S'inscrire</a>
+        <externalink href="http://www.google.fr">Mot de passe oublié ?</externalink>
+        <externalink href="http://www.google.com">S'inscrire</externalink>
     </section>
 
-
     <script>
-        const { shell } = require("electron");
-        this.on("mount", function(){
-            this.data = {
-                title: "Authentication"/*,
-                modalType: "onlyValid"*/
-            };
-            this.parent.updatePopupOpts("authentication", this.data);
-
-            const links = document.querySelectorAll("authentication > .links");
-            links.forEach( (aElem) => {
-                aElem.addEventListener("click", function(event){
-                    event.preventDefault();
-                    shell.openExternal(event.target.href)
-                });
+        this.on("mount", function() {
+            this.parent.updatePopupOpts("authentication", {
+                title: "Authentication"
             });
+            this.loginErrorMessage = null;
 
             const validButton = document.querySelector("popup > .popup > .buttons > .valid");
             validButton.addEventListener("click", () => {
@@ -55,15 +44,11 @@
                     closePopup();
                 }
                 else {
-                    this.opts.loginErrorMessage = "Compte inexistant ou mauvais mdp";
+                    this.loginErrorMessage = "Compte inexistant ou mauvais mdp";
                     this.update();
                 }
             });
         });
-
-        this.on("update", function() {
-            // console.log("updated with the parent");
-        })
     </script>
 
 
@@ -74,6 +59,10 @@
             width: 300px;
             padding: 10px;
         }
+
+            /*
+             * Authentication form
+             */
             authentication > form {
                 display: flex;
                 flex-direction: column;
@@ -83,11 +72,14 @@
                     border-radius: 5px;
                     border: none;
                 }
-                    authentication > form > input:not(:last-child){
-                        margin-bottom: 5px;
-                    }
+                authentication > form > input:not(:last-child){
+                    margin-bottom: 5px;
+                }
 
-            authentication > .links{
+            /*
+             * Authentication links
+             */
+            authentication > section.links {
                 margin-top: 10px;
                 display: flex;
                 justify-content: space-between;
