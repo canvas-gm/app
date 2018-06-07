@@ -1,5 +1,23 @@
-
 <news>
+    <section each={news} class="new">
+        <section class="title">
+            <p>{ title }</p>
+            <span>{ date }</span>
+        </section>
+        <section class="text">
+            <p>{ text }</p>
+        </section>
+    </section>
+    <script>
+        this.news = require('../config/news.json');
+        this.on("mount", () => {
+            setTimeout(() => {
+                this.news = require('../config/news2.json');
+                this.update();
+            }, 2000);
+        });
+    </script>
+
     <style>
         news {
             display: flex;
@@ -50,21 +68,4 @@
                     text-align: justify;
                 }
     </style>
-
-    <section each={opts.data} class="new">
-        <section class="title">
-            <p>{ title }</p>
-            <span>{ date }</span>
-        </section>
-        <section class="text">
-            <p>{ text }</p>
-        </section>
-    </section>
-    <script>
-        let interval = setInterval(() => {
-            this.opts = require('../config/news2.json');
-            this.update();
-            clearInterval(interval);
-        }, 2000);
-    </script>
 </news>
