@@ -11,10 +11,10 @@
         <section class="content">
             <yield/>
         </section>
-        <section class="buttons">
+        <section hide={ modalType === "noButtons" } class="buttons">
             <button class="valid">Valider</button>
             <button
-                hide={ opts.modalType === "onlyValid" }
+                hide={ modalType === "onlyValid" }
                 class="cancel"
                 ref="cancel">
                 Annuler
