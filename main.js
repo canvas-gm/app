@@ -15,8 +15,8 @@ function createWindow() {
     });
     mainWindow.webContents.openDevTools();
 
-    mainWindow.loadFile("./views/index.html");
-    
+    mainWindow.loadFile("./views/launcher.html");
+
     mainWindow.on("closed", function closed() {
         mainWindow = void 0;
     });

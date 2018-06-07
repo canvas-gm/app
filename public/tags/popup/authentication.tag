@@ -16,11 +16,11 @@
         const { shell } = require("electron");
         this.on("mount", function(){
             this.data = {
-                title: "Anthentificaiton"/*,
+                title: "Authentication"/*,
                 modalType: "onlyValid"*/
             };
             this.parent.updatePopupOpts("authentication", this.data);
-            
+
             const links = document.querySelectorAll("authentication > .links");
             links.forEach( (aElem) => {
                 aElem.addEventListener("click", function(event){
@@ -32,10 +32,10 @@
             const validButton = document.querySelector("popup > .popup > .buttons > .valid");
             validButton.addEventListener("click", () => {
                 var users = require("../config/users.json").users;
-                
+
                 const mail = document.getElementById("mail").value;
                 const password = document.getElementById("password").value;
-                
+
                 let findUser = false;
                 let userInfo;
                 users.forEach((user) => {
@@ -66,7 +66,7 @@
         })
     </script>
 
-    
+
     <style>
         authentication {
             display: flex;

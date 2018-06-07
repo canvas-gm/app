@@ -41,7 +41,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(50, 50, 50, 0.4);
             z-index: 999;
         }
             popup > .popup {
@@ -49,7 +49,10 @@
                 flex-direction: column;
                 flex-shrink: 0;
                 background: var(--soft-background);
+                border: 2px solid #FFF;
                 padding: 5px;
+                border-radius: 4px;
+                box-shadow: 0 0 10px #263238;
             }
             popup > .popup > .title {
                 position :relative;
@@ -67,14 +70,16 @@
                 popup > .popup > .title > .icon-window-close {
                     position: absolute;
                     right: 5px;
-                    cursor: pointer;
                 }
                     popup > .popup > .title > .icon-window-close:hover {
-                        color: red;
+                        cursor: pointer;
+                        color: var(--soft-red);
                     }
+
             popup > .popup > .content {
                 margin-top : 10px;
             }
+
         popup > .popup > .buttons {
             display: flex;
             justify-content: space-evenly;
