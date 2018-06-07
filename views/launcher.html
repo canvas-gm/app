@@ -7,9 +7,28 @@
     <link rel="stylesheet" href="../public/css/default.css">
     <link rel="stylesheet" href="../public/css/launcher.css">
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
+
+    <!-- Load RiotJS -->
     <script src="../public/js/libs/riot.js"></script>
+
+    <!-- Load launcher components -->
+    <script src="../public/components/externalink.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/asideController/list-left-panel.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/asideController/member-area.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/news.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/popup.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/popup/authentication.tag" type="riot/tag" defer async></script>
+
+    <!-- Load dom scripts -->
+    <script src="../public/js/asideController/leftPanelTabs.js" defer async></script>
+    <script src="../public/js/asideController/panelController.js" defer async></script>
+    <script src="../public/js/asideController/headButtons.js" defer async></script>
+    <script src="../public/js/windowController.js" defer async></script>
+    <script src="../public/js/popup.js" defer async></script>
 </head>
 <body>
+
+    <!-- Windows header start -->
     <header>
         <p>CanvasGM</p>
         <ul>
@@ -18,9 +37,17 @@
             <li class="icon-window-close" id="close"></li>
         </ul>
     </header>
+    <!-- Windows header end -->
+
+    <!-- Launcher content start -->
     <main>
+        <!-- Popup component (to allow us to create new popup in) -->
         <popup></popup>
+
+        <!-- Panel start -->
         <section id="leftPanel">
+
+            <!-- Top buttons to navigate on the right container -->
             <section class="headButtons">
                 <section class="button icon-home" id="hub" title="Hub"></section>
                 <section class="button icon-group" id="search" title="Search"></section>
@@ -28,7 +55,10 @@
                 <section class="button icon-chat" id="discord" title="Discord"></section>
             </section>
 
+            <!-- Navigation (servers and projects favorite) -->
             <nav>
+
+                <!-- Tabs to switch between servers & projects -->
                 <section class="tabs">
                     <section id="servers" class="tab active">
                         <span>10</span>
@@ -39,36 +69,31 @@
                         <p>Projects</p>
                     </section>
                 </section>
+
+                <!-- List of servers or projects -->
                 <list-left-panel class="projectsPanel" option="project"></list-left-panel>
                 <list-left-panel class="serversPanel" option="server"></list-left-panel>
             </nav>
 
-            <member-area>
-            </member-area>
+            <!-- Where authentication and member informations are -->
+            <member-area></member-area>
         </section>
+        <!-- Panel end -->
 
+        <!-- Panel controller (to show/hide) -->
         <section id="panelController"></section>
+        <!-- Panel controller end -->
 
+        <!-- Main content start -->
         <section id="mainContent">
             <news></news>
         </section>
+        <!-- Main content end -->
     </main>
-
-    <!-- Load launcher components -->
-    <script src="../public/components/externalink.tag" type="riot/tag"></script>
-    <script src="../public/components/asideController/list-left-panel.tag" type="riot/tag"></script>
-    <script src="../public/components/asideController/member-area.tag" type="riot/tag"></script>
-    <script src="../public/components/news.tag" type="riot/tag"></script>
-    <script src="../public/components/popup.tag" type="riot/tag"></script>
-    <script src="../public/components/popup/authentication.tag" type="riot/tag"></script>
+    <!-- Launcher content start -->
 
     <!-- Load javascript script -->
-    <script src="../public/js/asideController/leftPanelTabs.js"></script>
-    <script src="../public/js/asideController/panelController.js"></script>
-    <script src="../public/js/asideController/headButtons.js"></script>
-    <script src="../public/js/windowController.js"></script>
-    <script src="../public/js/popup.js"></script>
-    <script>
+    <script type="text/javascript">
         riot.mount("externalink");
         riot.mount("list-left-panel");
         riot.mount("news", require('../config/news.json'));
