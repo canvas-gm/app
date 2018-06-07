@@ -1,19 +1,24 @@
 <list-left-panel>
-    <section each={ opts.data } class="row">
+    <section each={ data } class="row">
         <section class="state { state ? state : "null"}"></section>
         <section class="title">
             <p>{ name }</p>
         </section>
     </section>
     <script>
+        this.data = [];
         const option = this.root.getAttribute("option");
-        let data;
         switch(option){
-            case "project": data = require('../config/projects.json'); break;
-            case "server": data = require('../config/servers.json'); break;
-            default: data = require('../config/projects.json'); break;
+            case "project":
+                this.data = require('../config/projects.json');
+            break;
+            case "server":
+                this.data = require('../config/servers.json');
+            break;
+            default:
+                this.data = require('../config/projects.json');
+            break;
         }
-        this.opts = data;
     </script>
 
     <style>

@@ -1,24 +1,22 @@
-{
-    "data": [
-        {
-            "name": "Mon premier projet",
-            "description": "La première description :D !",
-            "state": "connection"
-        },
-        {
-            "name": "Mon deuxième projet",
-            "description": "La deuxième description !",
-            "state": "connected"
-        },
-        {
-            "name": "Mon deuxième projet",
-            "description": "La deuxième description !",
-            "state": "disconnected"
-        },
-        {
-            "name": "Mon deuxième projet",
-            "description": "La deuxième description !",
-            "state": null
-        }
-    ]
-}
+[
+    {
+        "name": "Mon premier projet",
+        "description": "La première description :D !",
+        "state": "connection"
+    },
+    {
+        "name": "Mon deuxième projet",
+        "description": "La deuxième description !",
+        "state": "connected"
+    },
+    {
+        "name": "Mon deuxième projet",
+        "description": "La deuxième description !",
+        "state": "disconnected"
+    },
+    {
+        "name": "Mon deuxième projet",
+        "description": "La deuxième description !",
+        "state": null
+    }
+]
