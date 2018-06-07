@@ -1,18 +1,13 @@
 <externalink>
-    <a ref="a">
         <yield />
-    </a>
 
     <script>
-        this.root;
         const { shell } = require("electron");
         
         this.on('mount', () => {
-            const linkElement = this.refs.a;
-            linkElement.setAttribute("href", this.root.getAttribute("href"));
-            linkElement.addEventListener('click', (e) => {
-                e.preventDefault();
-                shell.openExternal(linkElement.getAttribute("href"));
+            const link = this.root.getAttribute("href");
+            this.root.addEventListener('click', () => {
+                shell.openExternal(link);
             });
         });
     </script>
