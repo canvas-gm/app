@@ -1,24 +1,32 @@
+// Require Node.JS Dependencies
 const is = require("@sindresorhus/is");
 
+/**
+ * @func openPopup
+ * @desc Open popup
+ * @returns {void}
+ */
 function openPopup(tag, data) {
-    let popupElem = document.querySelector("main > popup");
-    let tagElement = document.createElement(tag);
-    
-    popupElem.appendChild(tagElement);
+    const popupElem = document.querySelector("popup");
+
+    popupElem.appendChild(
+        document.createElement(tag)
+    );
     riot.mount("popup", data);
-
-    // console.log(popupElem._tag.opts);
-    // Reflect.set(popupElem._tag.opts, "updatePopupOpts", updatePopupOpts);
 }
 
+/**
+ * @func closePopup
+ * @desc Close popup (if active)
+ * @returns {void}
+ */
 function closePopup(){
-    const popupTag = document.querySelector("popup")._tag;
-    popupTag.unmount(true);
-    const popup = document.querySelector("popup").style.display = "none";
+    const popup = document.querySelector("popup");
+    popup._tag.unmount(true);
+    popup.classList.remove("show");
 }
 
-
-let addUpdateOpts = {
+const addUpdateOpts = {
     init: function() {
         this.on('mount', function() {
             this.updatePopupOpts = function(tag, opts) {
@@ -28,7 +36,7 @@ let addUpdateOpts = {
                 if(is.nullOrUndefined(opts) || JSON.stringify(opts) === "{}"){
                     throw new Error(`updateOpts function is not needed in ${tag} tag : option is empty`);
                 }
-            
+
                 let somethingDifferent = false;
                 for(let option in opts) {
                     if(option !== this.opts[option]) {

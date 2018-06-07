@@ -15,15 +15,13 @@
 
 
     <script>
-        this.on("mount", function() {
-            // this.opts.modelType = "simple";
-            // simple, closeWindow, onlyValid
-            document.querySelector("popup").style.display = "flex";
+        this.on("mount", () => {
+            this.root.classList.add("show");
 
             const popupCloseElem = document.querySelector("popup > .popup > .title > .icon-window-close");
-            popupCloseElem.addEventListener("click", closePopup);
-
             const cancelButton = document.querySelector("popup > .popup > .buttons > .cancel");
+
+            popupCloseElem.addEventListener("click", closePopup);
             cancelButton.addEventListener("click", closePopup);
         });
 
@@ -44,6 +42,10 @@
             background: rgba(50, 50, 50, 0.4);
             z-index: 999;
         }
+            popup.show {
+                display: flex;
+            }
+
             popup > .popup {
                 display: flex;
                 flex-direction: column;
