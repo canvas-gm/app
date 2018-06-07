@@ -25,10 +25,13 @@
     <script>
         this.on("mount", () => {
             this.root.classList.add("show");
-
             // Add cancel & close events
-            this.refs.close.addEventListener("click", closePopup);
-            this.refs.cancel.addEventListener("click", closePopup);
+            this.refs.close.addEventListener("click", () => {
+                closePopup(this.opts.onClosePopup);
+            });
+            this.refs.cancel.addEventListener("click", () => {
+                closePopup(this.opts.onClosePopup)
+            });
         });
 
         this.mixin("addUpdateOpts");

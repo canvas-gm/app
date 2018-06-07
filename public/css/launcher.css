@@ -179,7 +179,7 @@ main {
             cursor: default;
         }
 
-        #leftPanel > nav > .projectsPanel {
+        #projectsPanel {
             display: none;
         }
 

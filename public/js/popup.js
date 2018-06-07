@@ -18,12 +18,14 @@ function openPopup(tag, data) {
 /**
  * @func closePopup
  * @desc Close popup (if active)
+ * @param {Function} cb Callback
  * @returns {void}
  */
-function closePopup(){
+function closePopup(cb) {
     const popup = document.querySelector("popup");
     popup._tag.unmount(true);
     popup.classList.remove("show");
+    cb();
 }
 
 function updatePopupOpts(tag, opts) {

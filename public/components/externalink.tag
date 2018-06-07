@@ -4,8 +4,9 @@
     </a>
 
     <script>
+        this.root;
         const { shell } = require("electron");
-
+        
         this.on('mount', () => {
             const linkElement = this.refs.a;
             linkElement.setAttribute("href", this.root.getAttribute("href"));
