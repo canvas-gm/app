@@ -12,14 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     panel.addEventListener("click", () => {
-        if(isClose === true){
-            panel.classList.remove("icon-right-dir");
-            leftPanel.style.display = "flex";
-        }
-        else{
-            panel.classList.remove("icon-left-dir");
-            leftPanel.style.display = "none";
-        }
+        panel.classList.remove( isClose ? "icon-right-dir" : "icon-left-dir");
+        leftPanel.classList.toggle("hide");
         isClose = !isClose;
     });
 });

@@ -67,6 +67,10 @@ main {
     flex-direction: column;
     margin-left: 10px;
 }
+    #leftPanel.hide {
+        display: none;
+    }
+
     #leftPanel > .headButtons {
         display: flex;
         flex-shrink: 0;

@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const hubElem = document.getElementById("hub");
-    hubElem.addEventListener("click", function(){
-        unmountContent();
-    });
-    
+    hubElem.addEventListener("click", unmountContent);
+
 });
