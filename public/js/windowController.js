@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 document.addEventListener("DOMContentLoaded", () => {
     const { remote } = require("electron");
 
@@ -18,15 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     fullscreenElem.addEventListener("click", function minimizeAndMaximizeController() {
-        if(win.isMaximized()) {
+        if (win.isMaximized()) {
             return win.restore();
         }
-        win.maximize();
+
+        return win.maximize();
     });
 
     window.addEventListener("resize", function resize() {
         const isMaximized = win.isMaximized();
-        fullscreenElem.classList.remove( isMaximized ? "icon-window-maximize" : "icon-window-restore");
-        fullscreenElem.classList.add( isMaximized ? "icon-window-restore" : "icon-window-maximize" );
+        fullscreenElem.classList.remove(isMaximized ? "icon-window-maximize" : "icon-window-restore");
+        fullscreenElem.classList.add(isMaximized ? "icon-window-restore" : "icon-window-maximize");
     });
 });
