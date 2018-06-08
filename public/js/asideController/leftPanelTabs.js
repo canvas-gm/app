@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let servers = document.getElementById('servers');
-    let projects = document.getElementById("projects");
+    const servers = document.getElementById("servers");
+    const projects = document.getElementById("projects");
     const tabs = [servers, projects];
 
-    let projectsPanel = document.querySelector("nav > .projectsPanel");
-    let serversPanel = document.querySelector("nav > .serversPanel");
+    const projectsPanel = document.querySelector("#projectsPanel");
+    const serversPanel = document.querySelector("#serversPanel");
 
-    servers.addEventListener("click", (event) => {
+    servers.addEventListener("click", () => {
         
         projectsPanel.style.display = "none";
         serversPanel.style.display = "flex";
         setActive(servers);
     });
 
-    projects.addEventListener("click", (event) => {
+    projects.addEventListener("click", () => {
         projectsPanel.style.display = "flex";
         serversPanel.style.display = "none";
         setActive(projects);
     });
 
-    function setActive(element){
-        for(tab of tabs){
+    function setActive(element) {
+        for (const tab of tabs) {
             tab.classList.remove("active");
-            element.classList.add("active")
+            element.classList.add("active");
         }
     }
 });

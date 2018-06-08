@@ -1,6 +1,6 @@
 <list-left-panel>
     <section each={ data } class="row">
-        <section class="state { state ? state : "null"}"></section>
+        <section class="state { state ? state : null}"></section>
         <section class="title">
             <p>{ name }</p>
         </section>
@@ -19,6 +19,43 @@
                 this.data = require('../config/projects.json');
             break;
         }
+       
+        function setConnectionClass(element, connectionClass) {
+            const allConnectionClass = [
+                "connection",
+                "connected",
+                "disconnected"
+            ];
+            element.classList.remove(...allConnectionClass);
+            element.classList.add(connectionClass);
+        }
+
+        this.on("mount", function() {
+            if (option === "server"){
+                const serversPanelElement = document.getElementById("serversPanel");
+                const children = serversPanelElement.children;
+                serversPanelElement.addEventListener("click", (event) => {
+                    let target = event.target;
+                    while (target.className !== "row") {
+                        target = target.parentNode;
+                    }
+                    if (target.className === "row") {
+                        const index = [...children].indexOf(target);
+                        const stateElement = children[index].getElementsByClassName("state")[0];
+                        setConnectionClass(stateElement, "connection");
+                        var timeout = setTimeout(() => {
+                            setConnectionClass(stateElement, "connected");
+                            openPopup("server-project-list", {
+                                onClosePopup: function() {
+                                    setConnectionClass(stateElement, "disconnected");
+                                }
+                            });
+                            clearTimeout(timeout);
+                        }, 1000);
+                    }
+                });
+            }
+        });
     </script>
 
     <style>

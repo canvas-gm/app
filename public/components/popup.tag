@@ -11,10 +11,10 @@
         <section class="content">
             <yield/>
         </section>
-        <section class="buttons">
+        <section hide={ modalType === "noButtons" } class="buttons">
             <button class="valid">Valider</button>
             <button
-                hide={ opts.modalType === "onlyValid" }
+                hide={ modalType === "onlyValid" }
                 class="cancel"
                 ref="cancel">
                 Annuler
@@ -25,10 +25,13 @@
     <script>
         this.on("mount", () => {
             this.root.classList.add("show");
-
             // Add cancel & close events
-            this.refs.close.addEventListener("click", closePopup);
-            this.refs.cancel.addEventListener("click", closePopup);
+            this.refs.close.addEventListener("click", () => {
+                closePopup(this.opts.onClosePopup);
+            });
+            this.refs.cancel.addEventListener("click", () => {
+                closePopup(this.opts.onClosePopup)
+            });
         });
 
         this.mixin("addUpdateOpts");

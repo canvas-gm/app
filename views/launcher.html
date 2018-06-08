@@ -18,6 +18,7 @@
     <script src="../public/components/news.tag" type="riot/tag" defer async></script>
     <script src="../public/components/popup.tag" type="riot/tag" defer async></script>
     <script src="../public/components/popup/authentication.tag" type="riot/tag" defer async></script>
+    <script src="../public/components/popup/server-project-list.tag" type="riot/tag" defer async></script>
 
     <!-- Load dom scripts -->
     <script src="../public/js/asideController/leftPanelTabs.js" defer async></script>
@@ -71,8 +72,8 @@
                 </section>
 
                 <!-- List of servers or projects -->
-                <list-left-panel class="projectsPanel" option="project"></list-left-panel>
-                <list-left-panel class="serversPanel" option="server"></list-left-panel>
+                <list-left-panel id="projectsPanel" option="project"></list-left-panel>
+                <list-left-panel id="serversPanel" option="server"></list-left-panel>
             </nav>
 
             <!-- Where authentication and member informations are -->
@@ -96,7 +97,7 @@
     <script type="text/javascript">
         riot.mount("externalink");
         riot.mount("list-left-panel");
-        riot.mount("news");
+        // riot.mount("news");
         // const user = {
         //     pseudo: "Non connecté"
         // };
