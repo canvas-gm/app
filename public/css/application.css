@@ -1,5 +1,5 @@
 html, body {
-    height: calc(100vh - 8px);
+    height: calc(100vh - 2px);
     box-sizing: content-box;
 }
 
@@ -9,21 +9,22 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    border: 4px solid var(--border-color);
+    border: 1px solid #1E88E5;
 }
 
 /*
  * Application header!
  */
  header {
-    height: 35px;
+    height: 30px;
     background: var(--border-color);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     flex-shrink: 0;
     padding-left: 10px;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
     header > p {
         color: #FFF;
@@ -34,24 +35,26 @@ body {
     }
     header > ul {
         display: flex;
-        font-size: 16pt;
-        margin-right: 5px;
+        font-size: 15pt;
+        margin-right: 10px;
+        height: inherit;
+        align-items: center;
     }
-
-    header > ul > li {
-        display: flex;
-        color: white;
-        cursor: pointer;
-    }
-        header > ul > li:hover {
-            color: #DDD;
+        header > ul > li {
+            display: flex;
+            color: white;
+            cursor: pointer;
         }
-            header > ul > li:hover:last-child {
-                color: red;
+            header > ul > li:hover {
+                color: #DDD;
             }
-        header > ul > li:not(:last-child) {
-            margin-right: 10px;
-        }
+                header > ul > li:hover:last-child {
+                    color: #EF5350;
+                }
+
+            header > ul > li:not(:last-child) {
+                margin-right: 10px;
+            }
 
 /*
  * Application container!

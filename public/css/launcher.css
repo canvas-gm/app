@@ -9,7 +9,6 @@ nav {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    padding-right: 5px;
 }
     nav > navigation-menu {
         height: 70px;
@@ -18,7 +17,6 @@ nav {
         justify-content: center;
         color: var(--soft-background);
         font-size: 20pt;
-        border-radius: 10px;
         transition: 0.4s linear all;
     }
         nav > navigation-menu:hover {
