@@ -13,7 +13,6 @@
     <script src="../public/js/libs/riot.js"></script>
 
     <!-- Load launcher components -->
-    <script src="../public/components/asideController/list-left-panel.tag" type="riot/tag" defer async></script>
     <script src="../public/components/asideController/member-area.tag" type="riot/tag" defer async></script>
     <script src="../public/components/popup.tag" type="riot/tag" defer async></script>
     <script src="../public/components/popup/authentication.tag" type="riot/tag" defer async></script>
@@ -70,8 +69,8 @@
                 </section>
 
                 <!-- List of servers or projects -->
-                <list-left-panel id="projectsPanel" option="project"></list-left-panel>
-                <list-left-panel id="serversPanel" option="server"></list-left-panel>
+                <favorite-list-panel id="projectsPanel" type="projects"></favorite-list-panel>
+                <favorite-list-panel id="serversPanel" type="servers"></favorite-list-panel>
             </nav>
 
             <!-- Where authentication and member informations are -->

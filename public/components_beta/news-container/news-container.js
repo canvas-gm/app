@@ -1,16 +1,13 @@
-// Require Node.JS Dependencies
-const { join } = require("path");
-
 // Require Internal Dependencies
 const viewComponent = require("../viewComponent.js");
 const { createText } = require("../utils.js");
 
 // Require News (test) payload
-const news = require(join(__dirname, "../../../config/news.json"));
+const news = require("./news.json");
 
 /**
  * @class NewsContainer
- * @extends HTMLElement
+ * @extends viewComponent
  */
 class NewsContainer extends viewComponent {
     /**

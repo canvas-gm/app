@@ -1,0 +1,50 @@
+{
+    "projects": [
+        {
+            "name": "Mon premier projet",
+            "description": "La première description :D !",
+            "state": "connection"
+        },
+        {
+            "name": "Mon deuxième projet",
+            "description": "La deuxième description !",
+            "state": "connected"
+        },
+        {
+            "name": "Mon deuxième projet",
+            "description": "La deuxième description !",
+            "state": "disconnected"
+        },
+        {
+            "name": "Mon deuxième projet",
+            "description": "La deuxième description !",
+            "state": "null"
+        }
+    ],
+    "servers": [
+        {
+            "name": "Community Hub",
+            "ip": "localhost",
+            "port": 8080,
+            "state": "connected"
+        },
+        {
+            "name": "localhost",
+            "ip": "localhost",
+            "port": 8080,
+            "state": "connection"
+        },
+        {
+            "name": "Serveur Fraxken",
+            "ip": "127.0.0.1",
+            "port": 2564,
+            "state": "null"
+        },
+        {
+            "name": "Serveur de l'équipe Antarka",
+            "ip": "192.168.1.20",
+            "port": 1000,
+            "state": "disconnected"
+        }
+    ]
+}

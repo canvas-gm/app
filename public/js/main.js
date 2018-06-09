@@ -1,6 +1,3 @@
-// Require Node.JS Dependencies
-const { join } = require("path");
-
 // Require Third-party dependencies
 const componentLoader = require("../public/js/componentLoader.js");
 
@@ -8,6 +5,7 @@ async function main() {
     const loader = new componentLoader("public/components_beta");
     await loader.initialize();
     await Promise.all([
+        loader.loadComponent("favorite-list-panel"),
         loader.loadComponent("news-container"),
         loader.loadComponent("news-element"),
         loader.loadComponent("main-view"),
