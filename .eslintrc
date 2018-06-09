@@ -4,7 +4,6 @@
         "node": true,
         "browser": true
     },
-    "plugins": ["riot"],
     "parserOptions": {
         "ecmaVersion": 8,
         "sourceType": "module"
@@ -197,8 +196,8 @@
         "max-len": [
             "error",
             {
-                "code": 100,
-                "comments": 120
+                "code": 130,
+                "comments": 150
             }
         ],
         "max-lines": [

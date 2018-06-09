@@ -9,6 +9,7 @@ async function main() {
     await loader.initialize();
     await Promise.all([
         loader.loadComponent("news-container"),
+        loader.loadComponent("news-element"),
         loader.loadComponent("main-view"),
         loader.loadComponent("navigation-menu"),
         loader.loadComponent("extern-link")

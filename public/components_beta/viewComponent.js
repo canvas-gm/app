@@ -10,7 +10,7 @@ class viewComponent extends HTMLElement {
     constructor(componentName) {
         super();
         const tmpl = document.getElementById(componentName);
-        const shadowRoot = this.attachShadow({mode: 'open'});
+        const shadowRoot = this.attachShadow({ mode: "open" });
         shadowRoot.appendChild(tmpl.content.cloneNode(true));
     }
 }

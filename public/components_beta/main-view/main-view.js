@@ -1,6 +1,3 @@
-// Require Third-party dependencies
-const { shell } = require("electron");
-
 // Require Internal Dependencies
 const viewComponent = require("../viewComponent.js");
 
@@ -33,7 +30,7 @@ class MainView extends viewComponent {
      * @public
      * @method loadView
      * @memberof MainView#
-     * @param {!String} viewName
+     * @param {!String} viewName name of view
      * @returns {void}
      */
     loadView(viewName) {

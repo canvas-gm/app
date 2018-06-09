@@ -86,8 +86,17 @@ main > nav {
             display: none;
         }
 
-#mainContent {
+aside {
     display: flex;
-    flex: 1;
-    border-radius: 5px;
 }
+
+    /*
+    * News stylesheets
+    */
+    aside > news-container {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        box-sizing: border-box;
+        margin: 10px;
+    }

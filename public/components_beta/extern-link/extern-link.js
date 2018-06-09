@@ -13,7 +13,7 @@ class ExternLink extends HTMLElement {
      */
     constructor() {
         super();
-        this.addEventListener('click', () => {
+        this.addEventListener("click", () => {
             shell.openExternal(this.getAttribute("href"));
         });
     }

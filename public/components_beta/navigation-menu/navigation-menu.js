@@ -16,7 +16,7 @@ class NavigationMenu extends viewComponent {
      */
     constructor() {
         super("navigation-menu");
-        this.addEventListener('click', () => {
+        this.addEventListener("click", () => {
             if (this.hasAttribute("href")) {
                 return shell.openExternal(this.getAttribute("href"));
             }
@@ -27,6 +27,8 @@ class NavigationMenu extends viewComponent {
                     detail: this.getAttribute("view")
                 }));
             }
+
+            return void 0;
         });
     }
 
