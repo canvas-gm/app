@@ -3,10 +3,8 @@ body {
     background: radial-gradient(ellipse at center, rgba(207,216,220,1) 0%,rgba(144,164,174,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-/*
- * Launcher navigation
- */
-main > nav {
+/* Launcher (buttons) navigation */
+nav {
     width: 70px;
     background: var(--border-color);
     display: flex;
@@ -14,110 +12,37 @@ main > nav {
     flex-shrink: 0;
 }
 
-/*
- * Left panel (favorite projects and servers).
- */
-#leftPanel {
-    display: flex;
-    flex-direction: column;
-}
-    #leftPanel.hide {
-        display: none;
-    }
-
-    #leftPanel > nav {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        width: 320px;
-        box-sizing: border-box;
-        padding: 2px;
-        overflow: hidden;
-        background: #FFF;
-        box-shadow: 0 0 2px #FFF inset;
-        margin-bottom: 10px;
-    }
-
-        #leftPanel > nav > .tabs {
-            display: flex;
-            flex-shrink: 0;
-            background: var(--soft-background);
-            height: 40px;
-        }
-            #leftPanel > nav > .tabs > .tab {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex: 1 0;
-                color: #333;
-                font-weight: bold;
-                cursor: pointer;
-            }
-                #leftPanel > nav > .tabs > .tab:not(.active) > span {
-                    background: #FFF;
-                    color: #333;
-                }
-                #leftPanel > nav > .tabs > .tab > span {
-                    background: #0D47A1;
-                    border-radius: 20px;
-                    padding: 4px;
-                    color: #FFF;
-                    font-size: 12px;
-                    font-weight: bold;
-                    margin-right: 6px;
-                    text-align: center;
-                }
-                #leftPanel > nav > .tabs > .tab:hover:not(.active) {
-                    color: #1A237E;
-                }
-                #leftPanel > nav > .tabs > .tab:hover:not(.active) span {
-                    color: #1A237E;
-                }
-
-            #leftPanel > nav > .tabs > .tab:not(.active) {
-                background: none;
-                opacity: 0.65;
-                box-shadow: 1px 1px 10px rgba(0,0,0, 0.2) inset;
-            }
-            #leftPanel > nav > .tabs > .tab.active {
-                background: rgb(255,255,255);
-                background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(236,239,241,1) 100%);
-                cursor: default;
-            }
-
-            #projectsPanel {
-                display: none;
-            }
-
-favorite-list-panel {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    min-width: 0;
-    box-sizing: border-box;
-    padding: 2px;
-    border-radius: 0 0 3px 3px;
-    background: var(--soft-background);
-    overflow-y: auto;
-}
-    favorite-list-panel.hidden {
-        display: none;
-    }
-
-/*
- * Right container
- */
+/* Left panel (favorite projects and servers). */
 aside {
     display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 2px;
+    background: #FFF;
 }
+    /* Favorite panel tabs (to select panel to show or hide) */
+    aside > section#favorite-tabs {
+        display: flex;
+        background: var(--soft-background);
+        height: 40px;
+    }
 
-    /*
-     * News container
-     */
-    aside > news-container {
+    /* Favorite panel */
+    aside > favorite-list-panel {
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
+        flex-grow: 1;
         box-sizing: border-box;
-        margin: 10px;
+        padding: 2px;
+        background: var(--soft-background);
+        overflow-y: auto;
     }
+
+/* Main container (where main content is loaded with tag elements) */
+main-view {
+    display: flex;
+    overflow-y: auto;
+    margin: 10px;
+}

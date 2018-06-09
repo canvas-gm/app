@@ -63,7 +63,7 @@ class componentLoader {
             }
 
             const component = {
-                view: null
+                views: []
             };
             let findComponent = false;
             for (const file of currDirFiles) {
@@ -75,8 +75,8 @@ class componentLoader {
                     findComponent = true;
                     Reflect.set(component, "script", join(dirPath, file));
                 }
-                else if(ext === ".html") {
-                    Reflect.set(component, "view", join(dirPath, file));
+                else if (ext === ".html") {
+                    component.views.push(join(dirPath, file));
                 }
             }
 
@@ -106,18 +106,19 @@ class componentLoader {
         if (!this.components.has(componentName)) {
             throw new Error(`Unknow component with name ${componentName}`);
         }
-        const { script, view = null } = this.components.get(componentName);
+        const { script, views = [] } = this.components.get(componentName);
         const path = join(__dirname, "../..", script);
 
         const componentClass = require(path);
-        if (!is.nullOrUndefined(view)) {
+        // TODO: Load all files asynchronously!
+        for (const view of views) {
             const htmlStr = (await asyncFS.readFile(view)).toString();
             this.templateContainer.innerHTML += htmlStr;
         }
 
         // Declare HTML Component (element)
         customElements.define(componentName, componentClass);
-        console.log(`${componentName} loaded successfully!`);
+        // console.log(`${componentName} loaded successfully!`);
     }
 
 }

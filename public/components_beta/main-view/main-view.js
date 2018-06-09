@@ -13,6 +13,7 @@ class MainView extends viewComponent {
      */
     constructor() {
         super("main-view");
+        this.active = null;
         this.viewContainer = document.getElementById("view-container");
 
         // Load default view!
@@ -30,11 +31,18 @@ class MainView extends viewComponent {
      * @public
      * @method loadView
      * @memberof MainView#
-     * @param {!String} viewName name of view
+     * @param {!String} elementName name of the element to create
      * @returns {void}
      */
-    loadView(viewName) {
-        console.log(`loading view name ${viewName}`);
+    loadView(elementName) {
+        if (this.active === elementName) {
+            return;
+        }
+        console.log(`loading element name ${elementName}`);
+        const el = document.createElement(elementName);
+        this.innerHTML = "";
+        this.appendChild(el);
+        this.active = elementName;
     }
 
 }

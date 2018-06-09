@@ -15,5 +15,6 @@ async function main() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMLoaded!");
     main().catch(console.error);
 });

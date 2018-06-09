@@ -1,0 +1,54 @@
+<template id="fav-tabs">
+    <section class="tab">
+        <span class="count">0</span>
+        <p class="title"></p>
+    </section>
+
+    <style>
+        span, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        section.tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            color: #333;
+            font-weight: bold;
+        }
+            section.tab:not(.active) > span {
+                background: #FFF;
+                color: #333;
+            }
+            section.tab > span {
+                background: #0D47A1;
+                border-radius: 20px;
+                padding: 4px;
+                color: #FFF;
+                font-size: 12px;
+                font-weight: bold;
+                margin-right: 6px;
+                text-align: center;
+            }
+            section.tab:hover:not(.active) {
+                color: #1A237E;
+                cursor: pointer;
+            }
+            section.tab:hover:not(.active) span {
+                color: #1A237E;
+            }
+
+        section.tab:not(.active) {
+            background: none;
+            opacity: 0.65;
+            box-shadow: 1px 1px 10px rgba(0,0,0, 0.2) inset;
+        }
+        section.tab.active {
+            background: rgb(255,255,255);
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(236,239,241,1) 100%);
+            cursor: default;
+        }
+    </style>
+</template>

@@ -9,24 +9,11 @@
     <link rel="stylesheet" href="../public/css/launcher.css">
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
 
-    <!-- Load RiotJS -->
-    <script src="../public/js/libs/riot.js"></script>
-
-    <!-- Load launcher components -->
-    <script src="../public/components/asideController/member-area.tag" type="riot/tag" defer async></script>
-    <script src="../public/components/popup.tag" type="riot/tag" defer async></script>
-    <script src="../public/components/popup/authentication.tag" type="riot/tag" defer async></script>
-    <script src="../public/components/popup/server-project-list.tag" type="riot/tag" defer async></script>
-
     <!-- Load dom scripts -->
-    <script src="../public/js/asideController/leftPanelTabs.js" defer async></script>
-    <script src="../public/js/asideController/headButtons.js" defer async></script>
-    <script src="../public/js/windowController.js" defer async></script>
-    <script src="../public/js/popup.js" defer async></script>
-    <script src="../public/js/main.js" defer async></script>
+    <script src="../public/js/windowController.js" defer></script>
+    <script src="../public/js/main.js" defer></script>
 </head>
 <body>
-
     <!-- Windows header start -->
     <header>
         <p>CanvasGM</p>
@@ -36,13 +23,10 @@
             <li class="icon-window-close" id="close"></li>
         </ul>
     </header>
-    <!-- Windows header end -->
 
     <!-- Launcher content start -->
     <main>
-        <!-- Popup component (to allow us to create new popup in) -->
-        <popup></popup>
-
+        <!-- Navigation start -->
         <nav>
             <section class="button icon-home" id="hub" title="Hub"></section>
             <section class="button icon-group" id="search" title="Search"></section>
@@ -51,45 +35,17 @@
         </nav>
 
         <!-- Panel start -->
-        <section id="leftPanel">
+        <aside>
+            <!-- Tabs to switch between servers & projects -->
+            <section id="favorite-tabs"></section>
 
-            <!-- Navigation (servers and projects favorite) -->
-            <nav>
-
-                <!-- Tabs to switch between servers & projects -->
-                <section class="tabs">
-                    <section id="servers" class="tab active">
-                        <span>10</span>
-                        <p>Servers</p>
-                    </section>
-                    <section id="projects" class="tab">
-                        <span>10</span>
-                        <p>Projects</p>
-                    </section>
-                </section>
-
-                <!-- List of servers or projects -->
-                <favorite-list-panel id="projectsPanel" type="projects"></favorite-list-panel>
-                <favorite-list-panel id="serversPanel" type="servers"></favorite-list-panel>
-            </nav>
-
-            <!-- Where authentication and member informations are -->
-            <member-area></member-area>
-        </section>
-        <!-- Panel end -->
+            <!-- List of servers or projects -->
+            <favorite-list-panel type="Projects" default></favorite-list-panel>
+            <favorite-list-panel type="Servers"></favorite-list-panel>
+        </aside>
 
         <!-- Main content start -->
-        <aside>
-            <news-container></news-container>
-        </aside>
-        <!-- Main content end -->
+        <main-view default="news-container"></main-view>
     </main>
-    <!-- Launcher content start -->
-
-    <!-- Load javascript script -->
-    <script type="text/javascript">
-        riot.mount("list-left-panel");
-        const memberArea = riot.mount("member-area");
-    </script>
 </body>
 </html>

@@ -1,11 +1,13 @@
 <template id="main-view">
-    <section id="view-container">
-        <slot></slot>
-    </section>
+    <slot></slot>
 
     <style>
-        h1 {
-            color: red;
+        news-container {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            box-sizing: border-box;
+            margin: 10px;
         }
     </style>
 </template>
