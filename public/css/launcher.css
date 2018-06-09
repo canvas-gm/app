@@ -1,121 +1,26 @@
-html, body {
-    height: calc(100vh - 8px);
-    box-sizing: content-box;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,90a4ae+100 */
     background: rgb(207,216,220); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, rgba(207,216,220,1) 0%, rgba(144,164,174,1) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(207,216,220,1) 0%,rgba(144,164,174,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: radial-gradient(ellipse at center, rgba(207,216,220,1) 0%,rgba(144,164,174,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#90a4ae',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    border: 4px solid var(--border-color);
 }
 
-header {
-    height: 25px;
+/*
+ * Launcher navigation
+ */
+main > nav {
+    width: 70px;
     background: var(--border-color);
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
     flex-shrink: 0;
-    padding-left: 10px;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-    header > p {
-        color: #FFF;
-        font-weight: bold;
-        font-size: 14pt;
-        flex: 1;
-        -webkit-app-region: drag;
-    }
-    header > ul {
-        display: flex;
-        font-size: 16pt;
-    }
-
-    header > ul > li {
-        display: flex;
-        color: white;
-        cursor: pointer;
-    }
-        header > ul > li:hover {
-            color: #DDD;
-        }
-            header > ul > li:hover:last-child {
-                color: red;
-            }
-        header > ul > li:not(:last-child) {
-            margin-right: 5px;
-        }
-
-main {
-    display: flex;
-    padding: 10px 10px 10px 0;
-    flex-grow: 1;
-    border: 2px solid #B0BEC5;
-    box-sizing: border-box;
-    border-radius: 5px;
-    position: relative;
 }
 
 #leftPanel{
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
 }
     #leftPanel.hide {
         display: none;
     }
-
-    #leftPanel > .headButtons {
-        display: flex;
-        flex-shrink: 0;
-        height: 50px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        padding: 0 1px;
-    }
-        #leftPanel > .headButtons > .button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            font-size: 26px;
-            border-radius: 5px;
-            color: #FAFAFA;
-            border: 2px solid var(--border-color);
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-            box-shadow: 0px 0px 10px rgba(30, 30, 30, 0.1);
-            box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.25) inset;
-            transition: all 0.2s linear;
-        }
-            #leftPanel > .headButtons > .button:hover {
-                cursor: pointer;
-                color: #ECEFF1;
-                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1) inset;
-                border-color: #607D8B;
-            }
-            #leftPanel > .headButtons > .button + .button {
-                margin-left: 10px;
-            }
-        #hub {
-            background: #82B1FF;
-        }
-
-        #search {
-            background: #00E676;
-        }
-
-        #git {
-            background: #FFC400;
-        }
-        #discord {
-            background: #B388FF;
-        }
 
 #leftPanel > nav {
     display: flex;
@@ -123,11 +28,9 @@ main {
     flex: 1;
     width: 320px;
     box-sizing: border-box;
-    border-radius: 4px;
     padding: 2px;
     overflow: hidden;
     background: #FFF;
-    border: 2px solid #78909C;
     box-shadow: 0 0 2px #FFF inset;
     margin-bottom: 10px;
 }
@@ -183,22 +86,8 @@ main {
             display: none;
         }
 
-#panelController {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12px;
-    cursor: pointer;
-    color: #3E2723;
-    flex-shrink: 0;
-}
-
 #mainContent {
     display: flex;
     flex: 1;
-    background: var(--soft-background);
-    border: 2px solid #78909C;
     border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 2px #FFF inset;
 }

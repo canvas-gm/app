@@ -22,6 +22,8 @@ html, body {
 
 :root {
     --border-color: #78909C;
+    --border-color-darker: #546E7A;
+    --hard-background: #455A64;
     --soft-background: #ECEFF1;
     --soft-red: #F44336;
 }

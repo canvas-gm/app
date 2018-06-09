@@ -7,8 +7,8 @@
         <p>{ loginErrorMessage }</p>
     </section>
     <section class="links">
-        <externalink href="http://www.google.fr">Mot de passe oublié ?</externalink>
-        <externalink href="http://www.google.com">S'inscrire</externalink>
+        <extern-link href="http://www.google.fr">Mot de passe oublié ?</extern-link>
+        <extern-link href="http://www.google.com">S'inscrire</extern-link>
     </section>
 
     <script>

@@ -5,6 +5,7 @@
     <title>CanvasGM</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../public/css/default.css">
+    <link rel="stylesheet" href="../public/css/application.css">
     <link rel="stylesheet" href="../public/css/launcher.css">
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
 
@@ -12,7 +13,6 @@
     <script src="../public/js/libs/riot.js"></script>
 
     <!-- Load launcher components -->
-    <script src="../public/components/externalink.tag" type="riot/tag" defer async></script>
     <script src="../public/components/asideController/list-left-panel.tag" type="riot/tag" defer async></script>
     <script src="../public/components/asideController/member-area.tag" type="riot/tag" defer async></script>
     <script src="../public/components/news.tag" type="riot/tag" defer async></script>
@@ -22,10 +22,10 @@
 
     <!-- Load dom scripts -->
     <script src="../public/js/asideController/leftPanelTabs.js" defer async></script>
-    <script src="../public/js/asideController/panelController.js" defer async></script>
     <script src="../public/js/asideController/headButtons.js" defer async></script>
     <script src="../public/js/windowController.js" defer async></script>
     <script src="../public/js/popup.js" defer async></script>
+    <script src="../public/js/main.js" defer async></script>
 </head>
 <body>
 
@@ -45,16 +45,15 @@
         <!-- Popup component (to allow us to create new popup in) -->
         <popup></popup>
 
+        <nav>
+            <section class="button icon-home" id="hub" title="Hub"></section>
+            <section class="button icon-group" id="search" title="Search"></section>
+            <section class="button icon-github-circled" id="git" title="GIT"></section>
+            <section class="button icon-chat" id="discord" title="Discord"></section>
+        </nav>
+
         <!-- Panel start -->
         <section id="leftPanel">
-
-            <!-- Top buttons to navigate on the right container -->
-            <section class="headButtons">
-                <section class="button icon-home" id="hub" title="Hub"></section>
-                <section class="button icon-group" id="search" title="Search"></section>
-                <section class="button icon-github-circled" id="git" title="GIT"></section>
-                <section class="button icon-chat" id="discord" title="Discord"></section>
-            </section>
 
             <!-- Navigation (servers and projects favorite) -->
             <nav>
@@ -81,26 +80,21 @@
         </section>
         <!-- Panel end -->
 
-        <!-- Panel controller (to show/hide) -->
-        <section id="panelController"></section>
-        <!-- Panel controller end -->
-
         <!-- Main content start -->
         <section id="mainContent">
+            <navigation-menu view="xd">TEST</navigation-menu>
+            <main-view default="bro"></main-view>
             <news></news>
         </section>
         <!-- Main content end -->
     </main>
     <!-- Launcher content start -->
 
+    <section id="component"></section>
+
     <!-- Load javascript script -->
     <script type="text/javascript">
-        riot.mount("externalink");
         riot.mount("list-left-panel");
-        // riot.mount("news");
-        // const user = {
-        //     pseudo: "Non connecté"
-        // };
         const memberArea = riot.mount("member-area");
 
         function unmountContent(){
