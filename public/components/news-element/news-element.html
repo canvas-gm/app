@@ -1,10 +1,12 @@
 <template id="news-element">
-    <section class="title">
-        <p><slot name="title"></slot></p>
-        <span><slot name="date"></slot></span>
-    </section>
-    <section class="text">
-        <p><slot name="text"></slot></p>
+    <section class="news">
+        <section class="title">
+            <p><slot name="title"></slot></p>
+            <span><slot name="date"></slot></span>
+        </section>
+        <section class="text">
+            <p><slot name="text"></slot></p>
+        </section>
     </section>
 
     <style>
@@ -12,11 +14,14 @@
             margin: 0;
             padding: 0;
         }
-        :root {
+
+        .news {
             display: flex;
             flex-direction: column;
+            margin-bottom: 10px;
+            margin-right: 10px;
             border-radius: 4px;
-            background: red;
+            overflow: hidden;
         }
 
         /* News title */
@@ -26,18 +31,18 @@
             align-items: center;
             background: white;
             padding: 0 10px;
-            height: 35px;
-            background: #455A64;
+            height: 30px;
+            background: #263238;
         }
             .title > p {
                 font-weight: bold;
-                color: white;
+                color: #ECEFF1;
                 font-size: 12pt;
             }
             .title > span {
                 display: flex;
                 color: #FFF;
-                background: #37474F;
+                background: #01579B;
                 padding: 2px 5px;
                 border-radius: 5px;
                 font-size: 10pt;

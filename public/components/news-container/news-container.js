@@ -1,5 +1,4 @@
 // Require Internal Dependencies
-const viewComponent = require("../viewComponent.js");
 const { createText } = require("../utils.js");
 
 // Require News (test) payload
@@ -9,12 +8,13 @@ const news = require("./news.json");
  * @class NewsContainer
  * @extends viewComponent
  */
-class NewsContainer extends viewComponent {
+class NewsContainer extends HTMLElement {
     /**
      * @constructor
      */
     constructor() {
-        super("news-container");
+        super();
+        this.attachShadow({ mode: "open" });
         const fragment = document.createDocumentFragment();
 
         for (const data of news) {

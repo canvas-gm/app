@@ -41,10 +41,10 @@ html, body {
 }
 
 :root {
-    --border-color: #78909C;
-    --border-color-darker: #546E7A;
+    --border-color: #01579B;
+    --border-color-darker: #0D47A1;
     --hard-background: #455A64;
-    --soft-background: #ECEFF1;
+    --soft-background: #E1F5FE;
     --soft-red: #F44336;
 }
 
@@ -58,5 +58,6 @@ html, body {
 	border-radius: 5px;
 	border-top-right-radius: 9px 5px;
 	border-bottom-right-radius: 9px 5px;
-	box-shadow: inset 0 0 0 1px #9E9E9E;
+	box-shadow: inset 0 0 0 1px rgb(176,162,230), inset 0 0 0 6px rgb(176,162,230);
+	box-shadow: inset 0 0 0 1px rgb(245,245,245), inset 0 0 0 6px rgb(245,245,245);
 }

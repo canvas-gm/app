@@ -2,7 +2,7 @@
 const componentLoader = require("../public/js/componentLoader.js");
 
 async function main() {
-    const loader = new componentLoader("public/components_beta");
+    const loader = new componentLoader("public/components");
     await loader.initialize();
     await Promise.all([
         loader.loadComponent("favorite-list-panel"),

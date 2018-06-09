@@ -1,6 +1,5 @@
 body {
-    background: rgb(207,216,220); /* Old browsers */
-    background: radial-gradient(ellipse at center, rgba(207,216,220,1) 0%,rgba(144,164,174,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: var(--border-color);
 }
 
 /* Launcher (buttons) navigation */
@@ -10,23 +9,43 @@ nav {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    padding-right: 5px;
 }
+    nav > navigation-menu {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--soft-background);
+        font-size: 20pt;
+        border-radius: 10px;
+        transition: 0.4s linear all;
+    }
+        nav > navigation-menu:hover {
+            cursor: pointer;
+            color: #FFF;
+            background: var(--border-color-darker);
+        }
 
 /* Left panel (favorite projects and servers). */
 aside {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    width: 320px;
+    width: 300px;
     box-sizing: border-box;
     padding: 2px;
     background: #FFF;
+    border-radius: 5px;
+    overflow: hidden;
 }
     /* Favorite panel tabs (to select panel to show or hide) */
     aside > section#favorite-tabs {
         display: flex;
         background: var(--soft-background);
         height: 40px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
     }
 
     /* Favorite panel */
@@ -44,5 +63,5 @@ aside {
 main-view {
     display: flex;
     overflow-y: auto;
-    margin: 10px;
+    margin: 0 10px;
 }

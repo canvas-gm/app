@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
 
     <!-- Load dom scripts -->
-    <script src="../public/js/windowController.js" defer></script>
-    <script src="../public/js/main.js" defer></script>
+    <script src="../public/js/window.js" defer></script>
+    <script src="../public/js/default.js" defer></script>
 </head>
 <body>
     <!-- Windows header start -->
@@ -28,10 +28,18 @@
     <main>
         <!-- Navigation start -->
         <nav>
-            <section class="button icon-home" id="hub" title="Hub"></section>
-            <section class="button icon-group" id="search" title="Search"></section>
-            <section class="button icon-github-circled" id="git" title="GIT"></section>
-            <section class="button icon-chat" id="discord" title="Discord"></section>
+            <navigation-menu view="news-container">
+                <i class="button icon-home"></i>
+            </navigation-menu>
+            <navigation-menu>
+                <i class="button icon-group"></i>
+            </navigation-menu>
+            <navigation-menu href="https://github.com/canvas-gm">
+                <i class="button icon-github-circled"></i>
+            </navigation-menu>
+            <navigation-menu href="https://discord.gg/cSKpZK9">
+                <i class="button icon-chat"></i>
+            </navigation-menu>
         </nav>
 
         <!-- Panel start -->

@@ -16,7 +16,7 @@ body {
  * Application header!
  */
  header {
-    height: 25px;
+    height: 35px;
     background: var(--border-color);
     display: flex;
     align-items: flex-start;
@@ -59,7 +59,6 @@ body {
 main {
     display: flex;
     flex-grow: 1;
-    border: 2px solid var(--border-color-darker);
     box-sizing: border-box;
     position: relative;
 }
