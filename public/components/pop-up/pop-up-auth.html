@@ -1,3 +1,17 @@
 <template id="pop-up-auth">
+    <p slot="title">Authentication</p>
+    <form class="content" slot="content">
+        <input type="email" value="email" placeholder="email">
+        <input type="password">
+    </form>
 
+    <style>
+        form.content {
+            display: flex;
+            flex-direction: column;
+        }
+            form.content > * + * {
+                margin-top: 10px;
+            }
+    </style>
 </template>

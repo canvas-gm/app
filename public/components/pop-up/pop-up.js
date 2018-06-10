@@ -15,9 +15,16 @@ class Popup extends viewComponent {
      */
     constructor() {
         super("pop-up");
+        this.activePopupElement = null;
         this.isOpen = false;
         this.addEventListener("open", this.open.bind(this));
         this.addEventListener("close", this.close.bind(this));
+
+        const cancelElement = this.shadowRoot.querySelector(".cancel");
+        cancelElement.addEventListener("click", (event) => {
+            event.preventDefault();
+            this.close();
+        });
     }
 
     /**
@@ -27,15 +34,25 @@ class Popup extends viewComponent {
      * @returns {void}
      */
     open(event) {
-        console.log("open triggered!");
-        if (this.isOpen) {
-            // TODO delete rendered clone ?
-            this.close();
+        /** @type {HTMLTemplateElement} */
+        const tmpl = document.getElementById(event.detail);
+        if (!tmpl) {
+            return;
         }
-        this.isOpen = true;
-        this.classList.remove("hidden");
 
-        console.log(event.detail);
+        // If already open (remove old children).
+        const clone = tmpl.content.cloneNode(true);
+        if (this.isOpen) {
+            this.removeChild(this.activePopupElement);
+        }
+        this.appendChild(clone);
+        this.activePopupElement = clone;
+
+        // Show popup
+        this.isOpen = true;
+        if (this.classList.contains("hidden")) {
+            this.classList.remove("hidden");
+        }
     }
 
     /**
@@ -45,9 +62,14 @@ class Popup extends viewComponent {
      * @returns {void}
      */
     close() {
-        console.log("close triggered!");
+        if (!this.isOpen) {
+            return;
+        }
+
         this.classList.add("hidden");
         this.isOpen = false;
+        this.removeChild(this.activePopupElement);
+        this.activePopupElement = null;
     }
 
 }

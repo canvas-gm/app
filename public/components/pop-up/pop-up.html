@@ -1,28 +1,61 @@
 <template id="pop-up">
     <section class="wrapper">
         <section class="title">
-            <p><slot class="pop-up-title">Title</slot></p>
-            <section class="icon-window-close"></section>
+            <p><slot name="title">Title</slot></p>
+            <section class="icon-window-close">X</section>
+        </section>
+        <section class="content">
+            <slot name="content"></slot>
+        </section>
+        <section class="buttons">
+            <button class="validate">Valider</button>
+            <button class="cancel">Annuler</button>
         </section>
     </section>
 
     <style>
         section.wrapper {
-            min-width: 400px;
-            min-height: 300px;
+            min-width: 300px;
             padding: 5px;
-            border-radius: 5px;
+            border-radius: 4px;
             background: #EEE;
             border: 2px solid #FFF;
-            box-shadow: 1px 1px 10px #333;
+            box-shadow: 0 0 10px #263238;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
         }
-            section.wrapper > section.title {
-                height: 30px;
-                display: flex;
-                background: red;
+
+        .title {
+            position :relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--border-color);
+            height: 26px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+            .title > p {
+                color: #FFF;
+                font-size: 12pt;
             }
+            .title > .icon-window-close {
+                color: #FFF;
+            }
+            .title > .icon-window-close:hover {
+                cursor: pointer;
+                color: var(--soft-red);
+            }
+
+        .content {
+            margin-top : 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
     </style>
 </template>
