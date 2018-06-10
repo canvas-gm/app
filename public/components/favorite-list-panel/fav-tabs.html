@@ -23,31 +23,35 @@
                 color: #333;
             }
             section.tab > span {
-                background: #0D47A1;
-                border-radius: 20px;
+                background: #26A69A;
+                border-radius: 14px;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                width: 14px;
+                height: 14px;
                 padding: 4px;
                 color: #FFF;
                 font-size: 12px;
                 font-weight: bold;
-                margin-right: 6px;
-                text-align: center;
+                margin-right: 8px;
             }
             section.tab:hover:not(.active) {
-                color: #1A237E;
+                color: #26A69A;
                 cursor: pointer;
             }
             section.tab:hover:not(.active) span {
-                color: #1A237E;
+                color: #26A69A;
             }
 
         section.tab:not(.active) {
             background: none;
             opacity: 0.65;
-            box-shadow: 1px 1px 10px rgba(0,0,0, 0.2) inset;
+            box-shadow: 1px 1px 10px rgba(0, 102, 105, 0.5) inset;
         }
         section.tab.active {
             background: rgb(255,255,255);
-            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(236,239,241,1) 100%);
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(225,245,254,1) 99%);
             cursor: default;
         }
     </style>
