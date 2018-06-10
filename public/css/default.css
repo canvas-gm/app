@@ -27,19 +27,26 @@ li {
     list-style: none;
 }
 
-button {
-    padding: 5px 10px;
-}
-
 html, body {
     font-family: "Roboto";
     overflow: hidden;
 }
 
+/* generic hidden css attribute */
 .hidden {
     display: none;
 }
 
+/* button design */
+button {
+    border-radius: 2px;
+    background: #263238;
+    color: #FFF;
+    box-sizing: border-box;
+    border: 2px solid #455A64;
+}
+
+/* global variables */
 :root {
     --border-color: #01579B;
     --border-color-darker: #0D47A1;
@@ -48,6 +55,7 @@ html, body {
     --soft-red: #F44336;
 }
 
+/* scrollbar design */
 ::-webkit-scrollbar {
     width: 10px;
     border-radius: 4px;

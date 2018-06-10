@@ -1,0 +1,28 @@
+<template id="pop-up">
+    <section class="wrapper">
+        <section class="title">
+            <p><slot class="pop-up-title">Title</slot></p>
+            <section class="icon-window-close"></section>
+        </section>
+    </section>
+
+    <style>
+        section.wrapper {
+            min-width: 400px;
+            min-height: 300px;
+            padding: 5px;
+            border-radius: 5px;
+            background: #EEE;
+            border: 2px solid #FFF;
+            box-shadow: 1px 1px 10px #333;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+            section.wrapper > section.title {
+                height: 30px;
+                display: flex;
+                background: red;
+            }
+    </style>
+</template>

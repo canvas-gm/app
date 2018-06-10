@@ -1,0 +1,56 @@
+<template id="member-area">
+    <section class="avatar">
+        <img src="../public/images/fraxken-avatar.jpg" class="avatar" alt="avatar" />
+    </section>
+    <section class="info">
+        <b class="login-placeholder">Fraxken</b>
+        <button class="logout">logout</button>
+    </section>
+
+    <style>
+        b, button {
+            margin: 0;
+            padding: 0;
+        }
+        section.avatar {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            border-radius: 60px;
+            background: #333;
+            margin-left: 10px;
+            margin-right: 20px;
+            overflow: hidden;
+            border: 4px solid #E1F5FE;
+            box-sizing: border-box;
+            box-shadow: 1px 1px 10px #000 inset;
+        }
+            section.avatar > img {
+                width: inherit;
+                height: inherit;
+            }
+
+        section.info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: inherit;
+            flex-grow: 1;
+        }
+            section.info > b {
+                font-size: 14pt;
+                color: #37474F;
+            }
+            section.info > button {
+                width: 100px;
+                height: 25px;
+                margin-top: 5px;
+                border-radius: 2px;
+                background: #37474F;
+                color: #FFF;
+                box-sizing: border-box;
+                border: 2px ridge #263238;
+                outline: none;
+            }
+    </style>
+</template>

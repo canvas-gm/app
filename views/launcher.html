@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="../public/css/fontello-embedded.css">
 
     <!-- Load dom scripts -->
-    <script src="../public/js/window.js" defer></script>
-    <script src="../public/js/default.js" defer></script>
+    <script src="../public/scripts/window.js" defer></script>
 </head>
 <body>
+    <!-- pop-up element -->
+    <pop-up class="hidden"></pop-up>
+
     <!-- Windows header start -->
     <header>
         <p>CanvasGM</p>
@@ -50,10 +52,35 @@
             <!-- List of servers or projects -->
             <favorite-list-panel type="Projects" default></favorite-list-panel>
             <favorite-list-panel type="Servers"></favorite-list-panel>
+
+            <!-- Member area -->
+            <member-area></member-area>
         </aside>
 
         <!-- Main content start -->
         <main-view default="news-container"></main-view>
     </main>
+
+    <script type="text/javascript">
+        const componentLoader = require("../public/scripts/componentLoader.js");
+
+        async function DOMLoaded() {
+            const loader = new componentLoader("public/components");
+            await loader.initialize();
+            await Promise.all([
+                loader.loadComponent("pop-up"),
+                loader.loadComponent("member-area"),
+                loader.loadComponent("favorite-list-panel"),
+                loader.loadComponent("news-container"),
+                loader.loadComponent("news-element"),
+                loader.loadComponent("main-view"),
+                loader.loadComponent("navigation-menu"),
+                loader.loadComponent("extern-link")
+            ]);
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            DOMLoaded().catch(console.error);
+        });
+    </script>
 </body>
 </html>

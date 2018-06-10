@@ -1,23 +1,23 @@
-/* eslint-disable max-len */
-document.addEventListener("DOMContentLoaded", () => {
-    const { remote } = require("electron");
+// Require Third-party Dependencies
+const { remote } = require("electron");
 
-    // Retrieve windows
+/* Execute When the DOM has ben loaded */
+document.addEventListener("DOMContentLoaded", () => {
+    // Retrieve current electron window!
     const win = remote.getCurrentWindow();
 
-    // Retrive Windows Controller elements!
-    const minimizeElem = document.getElementById("minimize");
-    const fullscreenElem = document.getElementById("fullscreen");
-    const closeElem = document.getElementById("close");
-
-    minimizeElem.addEventListener("click", () => {
+    /* Minimize window */
+    document.getElementById("minimize").addEventListener("click", () => {
         remote.getCurrentWindow().minimize();
     });
 
-    closeElem.addEventListener("click", () => {
+    /* Close window */
+    document.getElementById("close").addEventListener("click", () => {
         remote.getCurrentWindow().close();
     });
 
+    // Retrive Windows Controller elements!
+    const fullscreenElem = document.getElementById("fullscreen");
     fullscreenElem.addEventListener("click", function minimizeAndMaximizeController() {
         if (win.isMaximized()) {
             return win.restore();
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return win.maximize();
     });
 
-    window.addEventListener("resize", function resize() {
+    window.addEventListener("resize", function onWindowResize() {
         const isMaximized = win.isMaximized();
         fullscreenElem.classList.remove(isMaximized ? "icon-window-maximize" : "icon-window-restore");
         fullscreenElem.classList.add(isMaximized ? "icon-window-restore" : "icon-window-maximize");

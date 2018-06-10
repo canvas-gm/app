@@ -17,6 +17,12 @@ const availableState = new Set([
 ]);
 
 /**
+ * @typedef {Object} tabReturn
+ * @property {HTMLElement} tab
+ * @property {Node} clone
+ */
+
+/**
  * @class NewsContainer
  * @extends HTMLElement
  */
@@ -57,7 +63,7 @@ class FavoriteListPanel extends HTMLElement {
                 tab.classList.add("active");
                 this.classList.remove("hidden");
             }
-            else {
+            else if (tab.classList.contains("active")) {
                 tab.classList.remove("active");
                 this.classList.add("hidden");
             }
@@ -86,7 +92,7 @@ class FavoriteListPanel extends HTMLElement {
      * @desc Create a new row !
      * @param {!String} title row title
      * @param {String=} [elementCount=0] number of elements!
-     * @returns {HTMLElement}
+     * @returns {tabReturn}
      *
      * @throws {TypeError}
      */
@@ -105,6 +111,8 @@ class FavoriteListPanel extends HTMLElement {
         const clone = tmpl.content.cloneNode(true);
         clone.querySelector(".title").textContent = title;
         clone.querySelector(".count").textContent = elementCount;
+
+        /** @type {HTMLElement} */
         const tab = clone.querySelector(".tab");
 
         return { clone, tab };
