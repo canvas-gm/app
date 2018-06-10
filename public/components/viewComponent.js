@@ -6,13 +6,23 @@ class viewComponent extends HTMLElement {
     /**
      * @constructor
      * @param {!String} componentName name of the component
+     * @param {Boolean=} [fromImport=false] create template from import or not
      */
-    constructor(componentName) {
+    constructor(componentName, fromImport = false) {
         super();
-        const tmpl = document.getElementById(componentName);
-        const shadowRoot = this.attachShadow({ mode: "open" });
-        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+        this.attachShadow({ mode: "open" });
+        /** @type {HTMLTemplateElement} */
+        let tmpl;
+        if (fromImport === true) {
+            const link = document.querySelector("link[rel=\"import\"]");
+            tmpl = link.getElementById(componentName);
+        }
+        else {
+            tmpl = document.getElementById(componentName);
+        }
+        this.shadowRoot.appendChild(tmpl.content.cloneNode(true));
     }
+
 }
 
 module.exports = viewComponent;

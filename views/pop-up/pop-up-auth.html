@@ -1,17 +1,57 @@
 <template id="pop-up-auth">
     <p slot="title">Authentication</p>
-    <form class="content" slot="content">
-        <input type="email" value="email" placeholder="email">
-        <input type="password">
-    </form>
+    <section slot="content">
+        <form id="auth-form">
+            <input id="mail" placeholder="email" type="text">
+            <input id="password" placeholder="password" type="password">
+        </form>
+        <section class="errorMessage hidden">
+            <p>Error here!</p>
+        </section>
+        <section class="links">
+            <extern-link href="http://www.google.fr">Mot de passe oublié ?</extern-link>
+            <extern-link href="http://www.google.com">S'inscrire</extern-link>
+        </section>
+    </section>
 
     <style>
-        form.content {
+        /* Authentication form */
+        form {
             display: flex;
             flex-direction: column;
         }
-            form.content > * + * {
-                margin-top: 10px;
+            form > input {
+                padding: 2px 5px;
+                border-radius: 5px;
+                border: none;
             }
+            form > input:not(:last-child){
+                margin-bottom: 5px;
+            }
+
+        /* links */
+        section.links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        extern-link {
+            color: #06F;
+        }
     </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currDoc = document.currentScript.ownerDocument;
+            const form = currDoc.getElementById("form-auth");
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                console.log("Auth form submitted!");
+            });
+        });
+    </script>
 </template>

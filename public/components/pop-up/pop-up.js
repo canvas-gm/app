@@ -15,7 +15,6 @@ class Popup extends viewComponent {
      */
     constructor() {
         super("pop-up");
-        this.activePopupElement = null;
         this.isOpen = false;
         this.addEventListener("open", this.open.bind(this));
         this.addEventListener("close", this.close.bind(this));
@@ -45,10 +44,11 @@ class Popup extends viewComponent {
         // If already open (remove old children).
         const clone = tmpl.content.cloneNode(true);
         if (this.isOpen) {
-            this.removeChild(this.activePopupElement);
+            while (this.firstChild) {
+                this.removeChild(this.firstChild);
+            }
         }
         this.appendChild(clone);
-        this.activePopupElement = clone;
 
         // Show popup
         this.isOpen = true;
@@ -70,8 +70,9 @@ class Popup extends viewComponent {
 
         this.classList.add("hidden");
         this.isOpen = false;
-        this.removeChild(this.activePopupElement);
-        this.activePopupElement = null;
+        while (this.firstChild) {
+            this.removeChild(this.firstChild);
+        }
     }
 
 }
