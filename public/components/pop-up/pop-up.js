@@ -34,8 +34,10 @@ class Popup extends viewComponent {
      * @returns {void}
      */
     open(event) {
+        const link = document.querySelector("link[rel=\"import\"]");
+
         /** @type {HTMLTemplateElement} */
-        const tmpl = document.getElementById(event.detail);
+        const tmpl = link.import.getElementById(event.detail);
         if (!tmpl) {
             return;
         }
