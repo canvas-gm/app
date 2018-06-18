@@ -46,10 +46,8 @@
     </style>
 
     <script>
-        console.log("template loaded!");
-        const root = document.currentScript.shadowRoot;
-        const form = root.getElementById("form-auth");
-        console.log(form);
+        const importDoc = document.currentScript.ownerDocument;
+        const form = importDoc.getElementById("auth-form");
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             console.log("Auth form submitted!");
