@@ -16,8 +16,8 @@ class Popup extends viewComponent {
     constructor() {
         super("pop-up");
         this.isOpen = false;
-        this.addEventListener("open", this.open.bind(this));
-        this.addEventListener("close", this.close.bind(this));
+        this.addEventListener("open", this.open);
+        this.addEventListener("close", this.close);
 
         const cancelElement = this.shadowRoot.querySelector(".cancel");
         cancelElement.addEventListener("click", (event) => {
