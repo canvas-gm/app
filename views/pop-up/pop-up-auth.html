@@ -4,6 +4,7 @@
         <form id="auth-form">
             <input id="mail" placeholder="email" type="text">
             <input id="password" placeholder="password" type="password">
+            <input type="submit" value="validate">
         </form>
         <section class="errorMessage hidden">
             <p>Error here!</p>
@@ -45,13 +46,13 @@
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currDoc = document.currentScript.ownerDocument;
-            const form = currDoc.getElementById("form-auth");
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-                console.log("Auth form submitted!");
-            });
+        console.log("template loaded!");
+        const root = document.currentScript.shadowRoot;
+        const form = root.getElementById("form-auth");
+        console.log(form);
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            console.log("Auth form submitted!");
         });
     </script>
 </template>
