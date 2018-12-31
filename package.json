@@ -17,8 +17,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^4.0.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-riot": "^0.1.7"
+    "eslint": "^5.11.1",
+    "eslint-plugin-riot": "^0.1.8"
   },
   "dependencies": {
     "@sindresorhus/is": "^0.14.0"
