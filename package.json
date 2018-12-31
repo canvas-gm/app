@@ -21,6 +21,6 @@
     "eslint-plugin-riot": "^0.1.7"
   },
   "dependencies": {
-    "@sindresorhus/is": "^0.9.0"
+    "@sindresorhus/is": "^0.14.0"
   }
 }
